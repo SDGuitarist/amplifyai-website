@@ -74,7 +74,7 @@ A hands-on workshop for creatives and small business owners. Use AI to work deep
 
 ### Testimonial — Heather Hilton
 
-> "Being a creative and having a business mind is a gift. Alex Guillen is offering a valuable workshop to learn a helpful approach to learn how to navigate using AI for a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace), you on your creative journey, Alex is a safe bet. Alex himself is not only 'tech savvy', but a very talented creative. His music presentations are as authentic as they get. I don't know about my other, entrepreneur friends.. but I can say for myself that this offering is going add so much value for my business. I'm excited to learn more."
+> "Being a creative and having a business mind is a gift. Alex Guillen is offering a valuable workshop to learn a helpful approach to learn how to navigate using AI for a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace), you on your creative journey, Alex is a safe bet. Alex himself is not only 'tech savvy', but a very talented creative. His music presentations are as authentic as they get. I don't know about my other, entrepreneur friends.. but I can say for myself that this offering is going to add so much value for my business. I'm excited to learn more."
 
 ### Credentials
 
