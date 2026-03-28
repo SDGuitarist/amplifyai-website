@@ -1,6 +1,6 @@
 # Amplify AI — Site Copy Draft
 
-**Status:** Draft for Alex review
+**Status:** Voice-reviewed, fixes applied (Claude AI Project review March 28)
 **Deadline:** March 31 EOD
 **Voice reference:** amplify-workshop-assets/context/brand-voice.md
 
@@ -16,7 +16,7 @@ Tier 2 = positioning/voice, requires Alex approval
 **Tagline:** AI Dual Literacy [Tier 1]
 
 **Positioning line [Tier 2 — needs Alex approval]:**
-I help creative businesses and small teams use AI the way I use it. As a collaborator, not a replacement.
+I help creative businesses and small teams use AI the way I use it. A collaborator, not a replacement.
 
 **Primary CTA:** Let's Talk [links to #contact]
 
@@ -30,7 +30,7 @@ That was my life for years. 2,500 gigs. A Berklee degree. Thirty years of readin
 
 So I started building. Not theory. Real systems. Five apps that handle my leads, prep my gigs, track venue intel, and talk to each other. I'm not an engineer. I'm a working musician who got tired of the gap between what I know and what I could actually act on in a day.
 
-The AI didn't make me faster. It made me more consistent. It let me show up as the version of myself that wins the gig, every time, not just when I had the energy. And I kept thinking: this isn't just a music thing. This is anyone who runs a business on expertise and can't clone themselves to keep up.
+The AI didn't make me faster. It made me more consistent. It let me show up as the version of myself that wins the gig, every time, not just when I had the energy. And I kept thinking: this isn't just a music thing. This is anyone who's good at what they do but can't be in five places at once.
 
 So now I'm teaching what worked.
 
@@ -42,10 +42,10 @@ So now I'm teaching what worked.
 Hands-on AI training for teams and groups. From 90 minutes to full-day. You leave with workflows you can use Monday morning, not slides you'll forget by Tuesday.
 
 ### AI Strategy Sessions
-A focused conversation about where AI fits in your business. No jargon, no pitch. I learn how you work, you learn what's possible. If there's a fit, we talk next steps.
+A conversation about what AI could actually do in your day-to-day. No jargon, no pitch. I learn how you work, and I'll tell you what I'd build if I were you. If there's a fit, we talk next steps.
 
 ### Team Training
-Custom AI onboarding built around what your team actually does. Not generic tutorials. Your workflows, your tools, your people.
+AI training built around what your team actually does. Not generic tutorials. Your workflows, your tools, your people.
 
 ---
 
@@ -82,7 +82,7 @@ A hands-on workshop for creatives and small business owners. Use AI to work deep
 - 30 years in the music and hospitality industry
 - Berklee College of Music
 - 5 AI applications built and running Pacific Flow Entertainment
-- Founder, Pacific Flow Entertainment (Latin music consultancy, San Diego)
+- Founder, Pacific Flow Entertainment, San Diego
 
 ---
 
