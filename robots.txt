@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sdguitarist.github.io/amplifyai-website/sitemap.xml
