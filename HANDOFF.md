@@ -1,17 +1,18 @@
 # Amplify AI Website — Handoff
 
-**Date:** 2026-03-28
+**Date:** 2026-03-30
 **Branch:** main
-**Phase:** Work (Phase D complete, Phase E pending)
-**Last session:** Full site built and live at project URL
+**Phase:** Work (Phase E complete, P1 in progress)
+**Last session:** Domain switchover + Formspree + social icons
 
 ---
 
 ## Current State
 
 Single-page consulting website for Amplify AI is **live** at:
-- **Project URL:** https://sdguitarist.github.io/amplifyai-website/
-- **Custom domain:** `amplifyai.to` (DNS resolving to GitHub Pages IPs, domain NOT yet attached to repo)
+- **Live URL:** https://amplifyai.to
+- **GitHub Pages:** https://sdguitarist.github.io/amplifyai-website/ (redirects to custom domain)
+- **Backup domain:** `amplifyai.me` (GoDaddy, forwarding to amplifyai.to — set by user)
 
 ### What Was Done (March 28)
 
@@ -28,6 +29,12 @@ Single-page consulting website for Amplify AI is **live** at:
 11. **Built full site:** index.html + styles.css with all sections
 12. **Added Film Festival Workshop** card (April 4, Industry Tap Room, Escondido, free)
 13. **Added contact form** (Formspree, ID not yet connected)
+
+### What Was Done (March 30)
+
+14. **Connected Formspree** — form ID `xpqodrkv`, email verified, test submission received
+15. **Domain switchover** — CNAME file added, all URLs updated to `amplifyai.to`, HTTPS verified
+16. **Social media logos** — replaced text links with inline SVG icons (LinkedIn + Instagram) in nav
 
 ### What's Live
 
@@ -46,11 +53,11 @@ Single-page consulting website for Amplify AI is **live** at:
 
 ## Next Actions (Priority Order)
 
-### P0 — Before April 4 (Film Festival)
+### P0 — Before April 4 (Film Festival) — DONE
 
-1. **Connect Formspree form ID** — Create account at formspree.io, get form ID, update `action` URL in index.html. The form displays but doesn't submit without this.
-2. **Domain switchover** — One commit: add `CNAME` file + update 5 absolute URLs (og:url, og:image, JSON-LD url, robots.txt Sitemap, sitemap.xml loc). See plan Phase E Step 2 for exact checklist.
-3. **Verify at custom domain** — Test at `amplifyai.to` after switchover. Check mobile, OG tags, contact links.
+1. ~~**Connect Formspree form ID**~~ — Done (2026-03-30). Form ID: `xpqodrkv`.
+2. ~~**Domain switchover**~~ — Done (2026-03-30). CNAME + URL updates + DNS verified.
+3. ~~**Verify at custom domain**~~ — Done (2026-03-30). HTTPS 200, form submission tested.
 
 ### P1 — Before April 25 (Amplify Workshop)
 
@@ -76,9 +83,9 @@ Single-page consulting website for Amplify AI is **live** at:
 | `content/site-copy.md` | Approved copy draft with Tier 1/Tier 2 labels |
 | `content/design-decisions.md` | Design direction, fonts, colors, reference sites |
 | `images/alex-headshot.jpeg` | Hero photo |
-| `robots.txt` | SEO (uses project URL, update on switchover) |
-| `sitemap.xml` | SEO (uses project URL, update on switchover) |
-| `CNAME` | Does NOT exist yet. Add on domain switchover. |
+| `robots.txt` | SEO (points to amplifyai.to) |
+| `sitemap.xml` | SEO (points to amplifyai.to) |
+| `CNAME` | Custom domain config for GitHub Pages |
 
 ## Design System
 
@@ -93,8 +100,8 @@ Single-page consulting website for Amplify AI is **live** at:
 
 | Domain | Registrar | Renewal | Status |
 |--------|-----------|---------|--------|
-| `amplifyai.to` | Porkbun | $51.80/yr, expires 2027-03-28 | DNS configured, not attached to repo |
-| `amplifyai.me` | GoDaddy | $29.99/yr, expires 2027-03-28 | Purchased, no DNS configured |
+| `amplifyai.to` | Porkbun | $51.80/yr, expires 2027-03-28 | Live, HTTPS active |
+| `amplifyai.me` | GoDaddy | $29.99/yr, expires 2027-03-28 | 301 forwarding to amplifyai.to |
 
 ## Related Docs (in amplify-workshop-assets repo)
 
@@ -112,12 +119,12 @@ This project must be cloned to the new laptop. Key things:
 2. **All code is on GitHub** — nothing local-only. Safe to clone fresh.
 3. **DNS is at Porkbun** — login credentials needed for domain management
 4. **GoDaddy** — `amplifyai.me` domain management
-5. **Formspree** — account will need to be created (not yet set up)
+5. **Formspree** — account active (alex@alexguillenmusic.com), form ID: `xpqodrkv`
 6. **Related project:** `amplify-workshop-assets` has the brainstorm + plan docs
 
 ## Session Start Prompt
 
 ```
 Read ~/Projects/amplifyai-website/HANDOFF.md.
-Continue from Phase E: domain switchover + Formspree setup.
+Continue P1 work: past workshops section, price verification, design polish.
 ```
