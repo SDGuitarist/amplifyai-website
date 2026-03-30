@@ -399,6 +399,19 @@ section {
   margin-bottom: 1.25rem;
 }
 
+.past-events-heading {
+  margin-top: var(--section-gap);
+}
+
+.workshop-card-past {
+  opacity: 0.85;
+  border-style: dashed;
+}
+
+.workshop-card-past .workshop-desc {
+  margin-bottom: 0;
+}
+
 /* --- Social Proof --- */
 .proof {
   border-top: 1px solid var(--surface);
