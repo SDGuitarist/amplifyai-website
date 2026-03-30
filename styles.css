@@ -159,12 +159,17 @@ section {
 
 .nav-social a {
   color: var(--secondary);
-  font-size: 0.85rem;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
 }
 
 .nav-social a:hover {
   color: var(--accent);
+}
+
+.nav-social svg {
+  display: block;
 }
 
 /* Mobile nav */
