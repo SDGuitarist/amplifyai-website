@@ -412,6 +412,15 @@ section {
   margin-bottom: 0;
 }
 
+.workshop-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  max-height: 280px;
+}
+
 /* --- Social Proof --- */
 .proof {
   border-top: 1px solid var(--surface);
