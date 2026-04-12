@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amplify: The Power of Human-Led AI | April 25, San Diego</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Hands-on AI workshop for creatives and small business owners. April 25, 2026. North Park, San Diego. 30 seats. Build an AI system around your expertise in four hours.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Amplify: The Power of Human-Led AI | April 25">
+  <meta property="og:description" content="Hands-on AI workshop. Four hours. Your laptop. Your projects. You leave with something working. April 25, North Park, San Diego.">
+  <meta property="og:image" content="./images/sdsff-alex-presenting.jpg">
+  <meta property="og:url" content="https://amplifyai.to/workshop.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Amplify: The Power of Human-Led AI | April 25">
+  <meta name="twitter:description" content="Hands-on AI workshop. Four hours. Your laptop. Your projects. You leave with something working.">
+  <meta name="twitter:image" content="./images/sdsff-alex-presenting.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Base styles -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Workshop page styles -->
+  <style>
+    /* --- Workshop Landing Overrides --- */
+    .workshop-hero {
+      padding: clamp(3rem, 8vw, 5rem) 0;
+      border-bottom: 1px solid var(--surface);
+    }
+
+    .workshop-hero .container {
+      max-width: 860px;
+    }
+
+    .workshop-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .workshop-hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .workshop-hero-text {
+      order: 2;
+    }
+
+    @media (min-width: 768px) {
+      .workshop-hero-text {
+        order: 1;
+      }
+    }
+
+    .workshop-hero-image {
+      order: 1;
+    }
+
+    @media (min-width: 768px) {
+      .workshop-hero-image {
+        order: 2;
+      }
+    }
+
+    .workshop-hero-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .workshop-hero-headline {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .workshop-hero-sub {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: var(--secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 420px;
+    }
+
+    .workshop-details-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .workshop-details-strip .detail {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .workshop-details-strip .detail-label {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .workshop-details-strip .detail-value {
+      color: var(--secondary);
+    }
+
+    .workshop-hero-photo {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      max-height: 400px;
+      border: 1px solid var(--surface);
+    }
+
+    .workshop-hero-cta {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .workshop-hero-cta .seats-note {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--secondary);
+    }
+
+    /* --- Who This Is For --- */
+    .who-section {
+      border-top: 1px solid var(--surface);
+    }
+
+    .who-section .container {
+      max-width: 860px;
+    }
+
+    .who-intro {
+      font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 600px;
+    }
+
+    .persona-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .persona-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .persona-card {
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .persona-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .persona-card p {
+      font-size: 0.95rem;
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    /* --- What You Walk Away With --- */
+    .takeaway-section {
+      border-top: 1px solid var(--surface);
+      background: var(--white);
+    }
+
+    .takeaway-section .container {
+      max-width: 860px;
+    }
+
+    .takeaway-section h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .takeaway-list {
+      list-style: none;
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .takeaway-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: clamp(1rem, 1.1vw, 1.1rem);
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .takeaway-check {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.1rem;
+    }
+
+    .takeaway-example {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.75rem 2rem;
+      margin-top: 2rem;
+    }
+
+    .takeaway-example h3 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .takeaway-example p {
+      font-size: 0.95rem;
+      color: var(--secondary);
+      line-height: 1.7;
+    }
+
+    /* --- Social Proof (workshop version) --- */
+    .workshop-proof {
+      border-top: 1px solid var(--surface);
+    }
+
+    .workshop-proof .container {
+      max-width: 860px;
+    }
+
+    .workshop-proof .testimonial {
+      margin-bottom: 2rem;
+    }
+
+    .workshop-proof .credentials {
+      justify-content: flex-start;
+    }
+
+    .workshop-events-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .workshop-event-badge {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--secondary);
+      padding: 0.5rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 100px;
+    }
+
+    /* --- Register Section --- */
+    .register-section {
+      border-top: 1px solid var(--surface);
+      background: var(--white);
+      text-align: center;
+    }
+
+    .register-section .container {
+      max-width: 600px;
+    }
+
+    .register-section h2 {
+      max-width: 400px;
+      margin: 0 auto 1rem;
+    }
+
+    .register-subtitle {
+      color: var(--secondary);
+      margin: 0 auto 2rem;
+      max-width: 450px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    @media (max-width: 480px) {
+      .payment-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .payment-option {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .payment-option .payment-label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .payment-option .payment-value {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .register-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .register-contact a {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .register-contact .contact-label {
+      font-size: 0.85rem;
+      color: var(--secondary);
+    }
+
+    /* --- Bottom CTA bar --- */
+    .bottom-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(44, 36, 33, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      z-index: 100;
+      border-top: 1px solid rgba(184, 112, 63, 0.3);
+    }
+
+    .bottom-cta-text {
+      color: var(--bg);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .bottom-cta .btn-primary {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 480px) {
+      .bottom-cta-text {
+        font-size: 0.8rem;
+      }
+      .bottom-cta .btn-primary {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    /* Add bottom padding so fixed bar doesn't cover content */
+    .footer {
+      padding-bottom: 5rem;
+    }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationEvent",
+    "name": "Amplify: The Power of Human-Led AI",
+    "description": "A hands-on AI workshop for creatives and small business owners. Build an AI system around your expertise in four hours.",
+    "startDate": "2026-04-25T10:00:00-07:00",
+    "endDate": "2026-04-25T14:00:00-07:00",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Expressive Arts San Diego",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3201 Thorn St",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "postalCode": "92104",
+        "addressCountry": "US"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "150",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/LimitedAvailability",
+      "validFrom": "2026-03-13"
+    },
+    "organizer": {
+      "@type": "Person",
+      "name": "Alex Guillen",
+      "url": "https://amplifyai.to"
+    },
+    "performer": {
+      "@type": "Person",
+      "name": "Alex Guillen"
+    },
+    "maximumAttendeeCapacity": 30
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">Amplify AI</a>
+      <ul class="nav-links">
+        <li><a href="#who">Who It's For</a></li>
+        <li><a href="#takeaway">What You Get</a></li>
+        <li><a href="#register">Register</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/alexguillenmusic" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/alexguillenmusic" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="workshop-hero">
+      <div class="container">
+        <div class="workshop-hero-grid">
+          <div class="workshop-hero-text">
+            <span class="workshop-hero-label">April 25, 2026 / North Park, San Diego</span>
+            <h1 class="workshop-hero-headline">Amplify: The Power of Human-Led AI</h1>
+            <p class="workshop-hero-sub">Four hours. Your laptop. Your projects. You build an AI system around your expertise and leave with something working.</p>
+            <div class="workshop-details-strip">
+              <div class="detail">
+                <span class="detail-label">When:</span>
+                <span class="detail-value">Sat, April 25 / 10 AM - 2 PM</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">Where:</span>
+                <span class="detail-value">Expressive Arts San Diego</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">Price:</span>
+                <span class="detail-value">$150</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">Bring:</span>
+                <span class="detail-value">Laptop</span>
+              </div>
+            </div>
+            <div class="workshop-hero-cta">
+              <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+              <span class="seats-note">30 seats only</span>
+            </div>
+          </div>
+          <div class="workshop-hero-image">
+            <img src="./images/sdsff-room-wide.jpg" alt="Attendees at the Amplify AI workshop at the San Diego Streaming Film Festival" class="workshop-hero-photo" width="600" height="400" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section id="who" class="who-section">
+      <div class="container">
+        <h2>Who This Is For</h2>
+        <p class="who-intro">You've been running your business for years. You're good at what you do. The problem isn't skill. It's that you can't be in five places at once, and the business side keeps eating the creative side.</p>
+        <div class="persona-grid">
+          <div class="persona-card">
+            <h3>Photographers</h3>
+            <p>You know the photographer who responds in 2 hours books the consultation. You're responding in 8. Not because you don't care. Because you had a shoot, an edit, and three other inquiries that day. Half are tire-kickers anyway.</p>
+          </div>
+          <div class="persona-card">
+            <h3>Designers &amp; Creatives</h3>
+            <p>"How much for a logo?" could be $500 or $5,000 depending on 12 factors you have to extract through conversation. You've lost projects because the proposal took too long or the initial response didn't convey enough expertise.</p>
+          </div>
+          <div class="persona-card">
+            <h3>Event Planners &amp; Coordinators</h3>
+            <p>You juggle venue relationships, vendor coordination, and client communication simultaneously. Your lead responses are inconsistent depending on how overwhelmed you are that week. First impressions happen there.</p>
+          </div>
+          <div class="persona-card">
+            <h3>Musicians, DJs &amp; Performers</h3>
+            <p>Equipment scoping, venue logistics, set list customization, pricing that changes based on day of week and travel distance. You're managing all of it in your head and losing deals when three inquiries stack up at once.</p>
+          </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--secondary); line-height: 1.7;">Also for: videographers, makeup artists, florists, consultants, coaches, and anyone who runs a business on their own expertise. No tech background needed.</p>
+      </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section id="takeaway" class="takeaway-section">
+      <div class="container">
+        <h2>What You Walk Away With</h2>
+        <p style="color: var(--secondary); line-height: 1.7; margin-bottom: 2rem;">Not a prompt library. Not a tool list. Not slides you'll forget by Tuesday.</p>
+        <ul class="takeaway-list">
+          <li>
+            <span class="takeaway-check">1</span>
+            <span>A working AI system built around your business, your voice, and your pricing. Something you can use the next morning.</span>
+          </li>
+          <li>
+            <span class="takeaway-check">2</span>
+            <span>The ability to build more systems like it yourself, without needing a developer or another workshop.</span>
+          </li>
+          <li>
+            <span class="takeaway-check">3</span>
+            <span>A framework for thinking about AI that doesn't expire when the tools change. Because the tools will change.</span>
+          </li>
+        </ul>
+        <div class="takeaway-example">
+          <h3>Example: The Writers Room Council</h3>
+          <p>At a recent session, a filmmaker volunteered to try this framework live. Five AI perspectives interrogated his script without writing a single word. By the end, he'd found the question he hadn't asked yet about his own story. He asked me to send him everything afterward. On April 25, you build your own version from scratch, tuned to your work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="workshop-proof">
+      <div class="container">
+        <h2>About Alex</h2>
+        <div class="testimonial">
+          <blockquote>
+            "Being a creative and having a business mind is a gift. Alex is offering a valuable workshop to learn how to navigate using AI as a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace) you on your creative journey, Alex is a safe bet. He is not only 'tech savvy', but a very talented creative. His music presentations are as authentic as they get."
+          </blockquote>
+          <cite>Heather Hilton</cite>
+        </div>
+        <ul class="credentials">
+          <li>2,500+ live events</li>
+          <li>30 years in music &amp; hospitality</li>
+          <li>Berklee College of Music</li>
+          <li>5 AI apps built &amp; running</li>
+        </ul>
+        <div class="workshop-events-row">
+          <span class="workshop-event-badge">SD Streaming Film Festival (Apr 4 &amp; 11)</span>
+          <span class="workshop-event-badge">FilmNet AI Panel (Oct 2025)</span>
+          <span class="workshop-event-badge">LA Classical Guitar Festival (May 2025)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register -->
+    <section id="register" class="register-section">
+      <div class="container">
+        <h2>Reserve Your Seat</h2>
+        <p class="register-subtitle">30 seats. $150. Send payment via Venmo or Zelle and you're in. Questions? Call or text.</p>
+        <div class="payment-options">
+          <div class="payment-option">
+            <span class="payment-label">Venmo</span>
+            <span class="payment-value">@Alex-Guillen-Music</span>
+          </div>
+          <div class="payment-option">
+            <span class="payment-label">Zelle</span>
+            <span class="payment-value">alex.guillen.music@gmail.com</span>
+          </div>
+        </div>
+        <a href="mailto:alex@alexguillenmusic.com?subject=Amplify Workshop - April 25" class="btn btn-primary" style="margin-bottom: 1rem;">Email to Register</a>
+        <div class="register-contact">
+          <span class="contact-label">Or reach out directly:</span>
+          <a href="tel:6197553246">619-755-3246</a>
+          <a href="mailto:alex@alexguillenmusic.com">alex@alexguillenmusic.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Amplify AI. San Diego, CA. <a href="/" style="color: var(--secondary);">amplifyai.to</a></p>
+    </div>
+  </footer>
+
+  <!-- Fixed bottom CTA bar -->
+  <div class="bottom-cta">
+    <span class="bottom-cta-text">April 25 / 30 seats / $150</span>
+    <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+  </div>
+
+</body>
+</html>
