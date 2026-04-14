@@ -137,10 +137,15 @@ Multi-page consulting website for Amplify AI is **live** at:
 11. ~~Homepage nav + workshop teaser~~ (2026-04-14)
 12. ~~Sitemap (all 10 pages)~~ (2026-04-14)
 
-### P0 — Before Launch (blocking)
+### P0 — Review Fixes Applied (2026-04-14)
 
-13. **Formspree: create hospitality form** — Go to formspree.io, create new form, replace `HOSPITALITY_FORM_ID` in hospitality.html with real form ID
-14. **Formspree spam protection** — Enable honeypot or reCAPTCHA on both forms (homepage `xpqodrkv` + hospitality form)
+13. ~~**Hospitality form fixed**~~ — Uses shared Formspree ID `xpqodrkv` with `source=hospitality` hidden field for attribution. Dedicated form can be created later for separate inbox routing.
+14. ~~**Spam protection added**~~ — Honeypot (`_gotcha`) field on both homepage and hospitality forms. Formspree's built-in spam filtering is also active on form `xpqodrkv`.
+15. ~~**Trust artifact reworked**~~ — Operator-grade ops teardown with explicit inputs (PMS data, review analysis, vendor contracts), concrete deliverable excerpts (property identity brief), staff execution playbooks, hospitality terminology (RevPAR, keys, OTA, F&B uplift).
+16. ~~**Nav standardized**~~ — About link added to full-site nav on all pages. "Back to all workshops" link on workshop.html. Workshops.html links to about.html.
+17. ~~**Security fixes**~~ — Personal email removed from schema markup and raw mailto: link removed from homepage contact section. Phone + form are the contact paths.
+
+### P0 — Still Blocking
 
 ### P1 — Soon After Launch
 
@@ -200,8 +205,8 @@ Multi-page consulting website for Amplify AI is **live** at:
 
 | Form | ID | Location | Purpose |
 |------|----|----------|---------|
-| Homepage contact | `xpqodrkv` | index.html | General inquiries |
-| Hospitality | `HOSPITALITY_FORM_ID` (placeholder) | hospitality.html | Attributed hospitality inquiries (hidden `source=hospitality` field) |
+| Homepage contact | `xpqodrkv` | index.html | General inquiries. Honeypot (`_gotcha`) enabled. |
+| Hospitality | `xpqodrkv` (shared) | hospitality.html | Attributed via hidden `source=hospitality` field. Honeypot (`_gotcha`) enabled. Dedicated form ID optional upgrade. |
 
 ## Domain Info
 
