@@ -1,9 +1,9 @@
 # Amplify AI Website — Handoff
 
-**Date:** 2026-03-30
+**Date:** 2026-04-14
 **Branch:** main
-**Phase:** Work (Phase E complete, P1 in progress)
-**Last session:** Domain switchover + Formspree + social icons
+**Phase:** Work (SEO Phase 1 in progress, Writing section shipped)
+**Last session:** Blog/Writing section + SEO planning + hospitality research
 
 ---
 
@@ -36,41 +36,78 @@ Single-page consulting website for Amplify AI is **live** at:
 15. **Domain switchover** — CNAME file added, all URLs updated to `amplifyai.to`, HTTPS verified
 16. **Social media logos** — replaced text links with inline SVG icons (LinkedIn + Instagram) in nav
 
+### What Was Done (April 12)
+
+17. **Workshop landing page** — dedicated `workshop.html` for April 25 ad campaign
+
+### What Was Done (April 13-14)
+
+18. **SEO brainstorm** — `docs/brainstorms/2026-04-13-seo-content-optimization-brainstorm.md`
+19. **SEO plan** — `docs/plans/2026-04-13-feat-seo-content-optimization-phase1-plan.md` (deepened + Codex-reviewed)
+20. **Hospitality research** — AI in guest experiences, boutique hotel operator challenges
+21. **Hospitality trust artifact** — `content/hospitality-trust-artifact.md` (Alex's version, 30-year event producer angle)
+22. **Writing section shipped** — 5 new pages:
+    - `blog.html` — Writing index
+    - `dual-literacy.html` — Flagship essay (Dual Literacy framework, Culture Stack)
+    - `blog-ai-literacy-training-gap.html` — Post 1
+    - `blog-what-schools-need.html` — Post 2
+    - `blog-two-skills-educators.html` — Post 3
+23. **Blog CSS** — article styles, blog grid, highlight boxes, author box, CTA added to `styles.css`
+24. **Nav updated** — "Writing" link added to homepage nav
+25. **Sitemap updated** — all new pages included
+
 ### What's Live
 
-7 sections on the page:
-1. Nav (Start Here, Services, Workshops, Contact + social links)
+**Homepage** (index.html) — 9 sections:
+1. Nav (Start Here, Services, Workshops, **Writing**, Contact + social links)
 2. Hero (headshot, headline, positioning, CTA)
 3. Start Here / Story (Alex's journey, voice-approved)
 4. What I Do (3 service cards)
 5. Mid CTA
-6. Workshops (Film Festival Apr 4 + Amplify Apr 25)
+6. Workshops (upcoming + past events)
 7. Social Proof (Heather Hilton + credentials)
 8. Contact (form + email + phone)
 9. Footer
+
+**Workshop page** (workshop.html) — April 25 event detail page
+
+**Writing section** (5 pages) — Dual Literacy essay + 3 education posts + blog index
 
 ---
 
 ## Next Actions (Priority Order)
 
-### P0 — Before April 4 (Film Festival) — DONE
+### DONE
 
-1. ~~**Connect Formspree form ID**~~ — Done (2026-03-30). Form ID: `xpqodrkv`.
-2. ~~**Domain switchover**~~ — Done (2026-03-30). CNAME + URL updates + DNS verified.
-3. ~~**Verify at custom domain**~~ — Done (2026-03-30). HTTPS 200, form submission tested.
+1. ~~Formspree form~~ (2026-03-30)
+2. ~~Domain switchover~~ (2026-03-30)
+3. ~~Past workshops section~~ (2026-04-06)
+4. ~~Workshop landing page~~ (2026-04-12)
+5. ~~Writing/blog section~~ (2026-04-14)
 
-### P1 — Before April 25 (Amplify Workshop)
+### P0 — Before Berklee Email (April 14)
 
-4. **Add past workshops** — FilmNet AI filmmaking panel + Los Angeles Classical Guitar Festival Workshop. Create a "Past Events" section or integrate into Workshops section.
-5. **Phase 2 build** — "For Businesses" page, Projects/Portfolio, Google Analytics, enhanced design polish.
-6. **Update Amplify Workshop price** — Verify $150 is correct post-early-bird.
+6. ~~**Writing section live**~~ — Done. 4 essays + blog index at amplifyai.to/blog.html
 
-### P2 — Post April 25
+### P1 — SEO Phase 1 (next session)
 
-7. **LinkedIn post** — "Built a consulting website in one session" (see ideas.md)
-8. **Video tutorial** — Walk through the website build workflow for content/course
-9. **Gated content** — Package video + guide + prompt templates on amplifyai.to
-10. **Phase 3** — Blog, free resources, link hub, `amplifyai.me` redirect
+Plan doc: `docs/plans/2026-04-13-feat-seo-content-optimization-phase1-plan.md`
+
+7. **Technical SEO fixes** — canonical URLs, absolute OG paths, favicon, title tag optimization, meta descriptions, schema improvements, fix broken internal links, img width/height
+8. **hospitality.html** — Proof Stack + trust artifact + dedicated Formspree form. Extract shared CSS from workshop.html incrementally.
+9. **workshops.html** — canonical workshop hub (upcoming + past). Homepage becomes teaser only.
+10. **about.html** — credentials, Berklee, SDSFF award, Dual Literacy philosophy
+11. **Formspree spam protection** — enable before launch
+12. **Google Business Profile** — create, optimize, start verification
+
+### P2 — Post Phase 1
+
+13. **Self-host Google Fonts** (stretch, ~100-300ms LCP improvement)
+14. **Branded OG images** (1200x630 cards)
+15. **Custom 404.html**
+16. **Email capture / newsletter system**
+17. **Google Analytics (GA4)**
+18. **AI search optimization** (Phase 2 from brainstorm)
 
 ---
 
@@ -78,13 +115,22 @@ Single-page consulting website for Amplify AI is **live** at:
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Single-page site (all sections) |
-| `styles.css` | Full stylesheet (Fraunces + DM Sans, warm linen palette) |
+| `index.html` | Homepage (all sections) |
+| `workshop.html` | April 25 workshop detail page |
+| `blog.html` | Writing index page |
+| `dual-literacy.html` | Flagship essay |
+| `blog-ai-literacy-training-gap.html` | Post 1 |
+| `blog-what-schools-need.html` | Post 2 |
+| `blog-two-skills-educators.html` | Post 3 |
+| `styles.css` | Full stylesheet (includes blog/article styles) |
 | `content/site-copy.md` | Approved copy draft with Tier 1/Tier 2 labels |
 | `content/design-decisions.md` | Design direction, fonts, colors, reference sites |
+| `content/hospitality-trust-artifact.md` | Hospitality ops teardown (Alex's version) |
+| `docs/brainstorms/2026-04-13-*.md` | SEO brainstorm |
+| `docs/plans/2026-04-13-*.md` | SEO Phase 1 plan (deepened + Codex-reviewed) |
 | `images/alex-headshot.jpeg` | Hero photo |
 | `robots.txt` | SEO (points to amplifyai.to) |
-| `sitemap.xml` | SEO (points to amplifyai.to) |
+| `sitemap.xml` | SEO (all 7 pages) |
 | `CNAME` | Custom domain config for GitHub Pages |
 
 ## Design System
@@ -125,6 +171,7 @@ This project must be cloned to the new laptop. Key things:
 ## Session Start Prompt
 
 ```
-Read ~/Projects/amplifyai-website/HANDOFF.md.
-Continue P1 work: past workshops section, price verification, design polish.
+cd /Users/alejandroguillen/Projects/amplifyai-website
+Read HANDOFF.md and docs/plans/2026-04-13-feat-seo-content-optimization-phase1-plan.md.
+Continue P1 SEO work: technical SEO fixes on existing pages, then hospitality.html.
 ```
