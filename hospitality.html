@@ -61,6 +61,7 @@
     <div class="nav-inner">
       <a href="/" class="nav-brand">Amplify AI</a>
       <ul class="nav-links">
+        <li><a href="/about.html">About</a></li>
         <li><a href="/#services">Services</a></li>
         <li><a href="/workshops.html">Workshops</a></li>
         <li><a href="/blog.html">Writing</a></li>
@@ -132,28 +133,66 @@
       </div>
     </section>
 
-    <!-- Trust Artifact: Worked Example -->
+    <!-- Trust Artifact: Operator-Grade Ops Teardown -->
     <section class="landing-section">
       <div class="container">
-        <h2>How It Works: Building a Guest Experience Calendar</h2>
-        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; margin-bottom: 2rem;">Sample Engagement</p>
-        <p style="font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; max-width: 600px;"><strong>The situation:</strong> A 3-property boutique hotel group in a coastal city. Each property has its own vibe, its own neighborhood, its own guests. The GM wants to run cultural programming, but the events coordinator left six months ago. Since then, programming has been whatever the front desk manager can pull together the week before. Generic wine-and-cheese nights that don't match the property's identity.</p>
+        <h2>Sample Engagement: Guest Experience Calendar for a 3-Property Group</h2>
+        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); font-weight: 600; margin-bottom: 1rem;">Ops Teardown</p>
+        <p style="font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; max-width: 600px; margin-bottom: 2rem;">This is what an engagement actually looks like. Not a pitch deck. A working example of inputs, process, and deliverables.</p>
 
-        <div class="process-steps" style="margin-top: 2rem;">
+        <div class="process-steps">
           <div class="process-step">
-            <h3>Week 1: Experience Audit</h3>
-            <p>Walk each property and map what makes it distinct. Neighborhood, guest demographics, seasonal patterns, existing vendor relationships. This is the same read-the-room process I've used for 30 years producing live events. You can't program a space you haven't felt.</p>
+            <h3>The Brief</h3>
+            <p><strong>Client:</strong> 3-property boutique hotel group, coastal market. Properties range from 28 to 52 keys. Each targets a different guest segment (couples getaway, family/extended stay, business/creative retreat).</p>
+            <p style="margin-top: 0.75rem;"><strong>Problem:</strong> Events coordinator left 6 months ago. Programming defaulted to generic wine-and-cheese nights across all three properties. RevPAR is flat. Guest review scores mention "nice room, nothing to do." OTA listing photos show rooms, not experiences. The GM knows programming drives rebookings but has no bandwidth to plan it.</p>
+            <p style="margin-top: 0.75rem;"><strong>Constraint:</strong> No dedicated events budget. Programming must pay for itself through F&B uplift and direct booking conversion. Front desk staff execute, not a creative director.</p>
           </div>
+
           <div class="process-step">
-            <h3>Weeks 2-3: AI-Powered Programming Engine</h3>
-            <p>Build a system that pulls from a curated database of local artists, chefs, wellness practitioners, and cultural partners. It matches programming to each property's identity and guest profile. Generates a 90-day experience calendar with event concepts, vendor suggestions, and estimated costs. The AI does the research and assembly. The human judgment comes from experience.</p>
+            <h3>Week 1 Deliverable: Property Experience Audit</h3>
+            <p><strong>Inputs:</strong> On-site walkthrough of each property. Guest demographic data from PMS (average stay length, booking source, repeat rate). TripAdvisor/Google review analysis (keyword extraction for what guests praise vs. what's missing). Neighborhood asset map (restaurants, galleries, parks, cultural venues within 15-minute walk). Existing vendor list and contract terms.</p>
+            <p style="margin-top: 0.75rem;"><strong>Output:</strong> A property identity brief for each location. Example excerpt:</p>
+            <div class="highlight-box" style="margin-top: 1rem;">
+              <p><strong>Property B: The Cove (42 keys, couples segment)</strong></p>
+              <p style="margin-top: 0.5rem;"><em>Identity:</em> Intimate, art-forward, neighborhood-rooted. Guests are 28-45, booking direct or via Tablet Hotels. Average stay 2.3 nights. 68% first-time visitors. Reviews praise "design" and "quiet" but 0 mentions of programming or events in last 90 days.</p>
+              <p style="margin-top: 0.5rem;"><em>Neighborhood assets:</em> 3 galleries within 5 min walk, weekly farmers market (Saturdays), 2 chef-driven restaurants open to collaboration, surf school 2 blocks south.</p>
+              <p style="margin-top: 0.5rem;"><em>Programming gap:</em> No recurring touchpoints between check-in and check-out. Concierge recommendations are verbal and inconsistent across shifts.</p>
+              <p style="margin-top: 0.5rem;"><em>Quick win:</em> Curated neighborhood walk card (print + QR to digital version) personalized by guest segment. Costs $0.40/guest. Can be live in 5 days.</p>
+            </div>
           </div>
+
           <div class="process-step">
-            <h3>Week 4+: Staff Playbooks</h3>
-            <p>Each event gets a one-page playbook: setup, flow, guest touchpoints, fallback plan if the vendor cancels. Your front desk team can execute without needing an events background.</p>
+            <h3>Weeks 2-3 Deliverable: AI-Powered 90-Day Experience Calendar</h3>
+            <p><strong>How it works:</strong> AI system pulls from a curated vendor database (local artists, chefs, wellness practitioners, cultural partners) cross-referenced against each property's identity brief, seasonal occupancy patterns, and guest segment data. It generates event concepts scored by fit, cost, and expected F&B uplift.</p>
+            <p style="margin-top: 0.75rem;"><strong>What the GM receives:</strong></p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; color: var(--secondary); line-height: 1.8; font-size: 0.95rem;">
+              <li>90-day calendar per property with 2-3 events per week</li>
+              <li>Each event tagged: type (cultural, wellness, culinary, family), estimated attendance, vendor contact, setup requirements, projected F&B revenue</li>
+              <li>Vendor outreach templates pre-drafted by AI, reviewed by me for tone and relationship context</li>
+              <li>Conflict flags (e.g., "Property A jazz night overlaps with Property C gallery opening; split your music vendor budget")</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">The AI does the research, scheduling math, and vendor matching. I review every recommendation against what I know about programming live spaces. A rooftop bar at sunset needs different energy than a lobby gallery reception. That judgment doesn't come from data.</p>
+          </div>
+
+          <div class="process-step">
+            <h3>Week 4+ Deliverable: Staff Execution Playbooks</h3>
+            <p><strong>One page per event.</strong> Each playbook includes:</p>
+            <ul style="margin-top: 0.5rem; padding-left: 1.25rem; color: var(--secondary); line-height: 1.8; font-size: 0.95rem;">
+              <li>Setup checklist with timeline (e.g., "Tables moved by 4 PM, artist arrives 4:30, bar opens 5")</li>
+              <li>Guest touchpoint script ("At check-in, mention tonight's gallery pop-up. Hand them the event card.")</li>
+              <li>Vendor day-of contact and load-in instructions</li>
+              <li>Fallback plan if vendor cancels (backup playlist, self-guided alternative, reschedule protocol)</li>
+              <li>Post-event: 3 questions for front desk to note (attendance estimate, guest comments, F&B spike)</li>
+            </ul>
+            <p style="margin-top: 0.75rem;">Your front desk team can execute these without an events background. The playbook removes the guesswork.</p>
+          </div>
+
+          <div class="process-step">
+            <h3>The Result</h3>
+            <p>The hotel group goes from "we should do something" to a running calendar that reflects each property's character. Programming becomes a system, not a scramble. The AI maintains the calendar, flags seasonal adjustments, and drafts vendor outreach. The staff executes from playbooks. The GM reviews and approves instead of planning from scratch.</p>
+            <p style="margin-top: 0.75rem;">Guests start posting about the experience, not just the room. Direct booking pages can feature upcoming events. OTA listings get richer photos. Review scores mention programming. RevPAR moves.</p>
           </div>
         </div>
-        <p style="font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; max-width: 600px; margin-top: 2rem;"><strong>What changes:</strong> The hotel goes from "we should do something" to a running calendar that reflects each property's character. Programming becomes a system, not a scramble. Guests start posting about the experience, not just the room.</p>
       </div>
     </section>
 
@@ -224,8 +263,9 @@
       <div class="container">
         <h2>Book a Free 30-Minute Discovery Call</h2>
         <p class="landing-register-subtitle">Tell me about your properties and your biggest operational challenge. No pitch, no pressure. If I can help, I'll tell you how. If I can't, I'll tell you that too.</p>
-        <form action="https://formspree.io/f/HOSPITALITY_FORM_ID" method="POST" class="contact-form" style="text-align: left;">
+        <form action="https://formspree.io/f/xpqodrkv" method="POST" class="contact-form" style="text-align: left;">
           <input type="hidden" name="source" value="hospitality">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
