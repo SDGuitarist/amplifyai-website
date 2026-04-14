@@ -2,14 +2,14 @@
 
 **Date:** 2026-04-14
 **Branch:** main
-**Phase:** Work (SEO Phase 1 in progress, Writing section shipped)
-**Last session:** Blog/Writing section + SEO planning + hospitality research
+**Phase:** Work (SEO Phase 1 — Steps 1-6 complete, pre-launch tasks remain)
+**Last session:** SEO Phase 1 implementation — technical fixes, 3 new landing pages, homepage updates
 
 ---
 
 ## Current State
 
-Single-page consulting website for Amplify AI is **live** at:
+Multi-page consulting website for Amplify AI is **live** at:
 - **Live URL:** https://amplifyai.to
 - **GitHub Pages:** https://sdguitarist.github.io/amplifyai-website/ (redirects to custom domain)
 - **Backup domain:** `amplifyai.me` (GoDaddy, forwarding to amplifyai.to — set by user)
@@ -53,23 +53,68 @@ Single-page consulting website for Amplify AI is **live** at:
     - `blog-what-schools-need.html` — Post 2
     - `blog-two-skills-educators.html` — Post 3
 23. **Blog CSS** — article styles, blog grid, highlight boxes, author box, CTA added to `styles.css`
-24. **Nav updated** — "Writing" link added to homepage nav
-25. **Sitemap updated** — all new pages included
+
+### What Was Done (April 14 — SEO Phase 1)
+
+24. **Writing CTA** — link card section added to homepage between Social Proof and Contact
+25. **Technical SEO fixes** across all pages:
+    - Canonical URLs on all 7 existing pages
+    - Absolute OG/Twitter image paths everywhere
+    - Title optimized: "AI Consulting & Workshops in San Diego | Amplify AI"
+    - Meta description updated with hospitality mention and CTA verb
+    - Schema improved: areaServed, priceRange, image, knowsAbout, alumniOf (Berklee)
+    - Workshop schema: image property added
+    - Broken workshop link fixed (github.io -> ./workshop.html)
+    - Workshop nav brand fixed (# -> /)
+    - SVG favicon created and linked on all pages
+    - Sitemap lastmod dates updated
+26. **hospitality.html** — new landing page targeting boutique hotel operators:
+    - Proof Stack pattern (specificity, credentials, testimonial, process transparency)
+    - Worked trust artifact (Guest Experience Calendar example)
+    - "Who This Is NOT For" negative qualification section
+    - 3 CTA placements (hero, after proof, sticky bottom bar)
+    - Dedicated Formspree form with `source=hospitality` hidden field
+    - Service schema with areaServed
+    - **NOTE: Formspree form ID is placeholder `HOSPITALITY_FORM_ID` — needs real ID**
+27. **workshops.html** — canonical workshop hub:
+    - Upcoming events (April 25) with link to workshop.html detail page
+    - Past events (SDSFF Apr 4 & 11, FilmNet Oct 2025, LAGF May 2025)
+    - Persona cards, brief about section
+    - ItemList schema with EducationEvent entries
+28. **about.html** — credentials and philosophy page:
+    - Full story (expanded from homepage "Start Here")
+    - Credentials (Berklee, SDSFF award, 2500+ events, workshop history)
+    - AI Dual Literacy philosophy with link to essay
+    - Person schema with knowsAbout, alumniOf, award
+29. **Homepage updates:**
+    - Nav links to /workshops.html hub instead of #workshops anchor
+    - Nav brand links to / instead of #
+    - Workshop section reduced to single upcoming event teaser
+    - Past events removed (live on workshops.html)
+30. **Shared CSS extracted** — `.landing-*` components moved from workshop.html inline styles to styles.css (hero grid, persona cards, proof section, CTA/register, bottom bar, process steps, not-for list)
+31. **Sitemap updated** — 10 pages total
 
 ### What's Live
 
 **Homepage** (index.html) — 9 sections:
-1. Nav (Start Here, Services, Workshops, **Writing**, Contact + social links)
+1. Nav (Start Here, Services, Workshops, Writing, Contact + social links)
 2. Hero (headshot, headline, positioning, CTA)
 3. Start Here / Story (Alex's journey, voice-approved)
 4. What I Do (3 service cards)
 5. Mid CTA
-6. Workshops (upcoming + past events)
+6. Workshops (teaser — 1 upcoming event + link to hub)
 7. Social Proof (Heather Hilton + credentials)
-8. Contact (form + email + phone)
-9. Footer
+8. Writing (link card to /blog.html)
+9. Contact (form + email + phone)
+10. Footer
 
-**Workshop page** (workshop.html) — April 25 event detail page
+**Workshop detail** (workshop.html) — April 25 event page (focused nav, inline styles)
+
+**Workshops hub** (workshops.html) — All upcoming + past events
+
+**Hospitality** (hospitality.html) — Boutique hotel consulting landing page
+
+**About** (about.html) — Credentials, story, philosophy
 
 **Writing section** (5 pages) — Dual Literacy essay + 3 education posts + blog index
 
@@ -84,30 +129,33 @@ Single-page consulting website for Amplify AI is **live** at:
 3. ~~Past workshops section~~ (2026-04-06)
 4. ~~Workshop landing page~~ (2026-04-12)
 5. ~~Writing/blog section~~ (2026-04-14)
+6. ~~Writing section live / Berklee email~~ (2026-04-14)
+7. ~~Technical SEO fixes~~ (2026-04-14)
+8. ~~hospitality.html~~ (2026-04-14)
+9. ~~workshops.html~~ (2026-04-14)
+10. ~~about.html~~ (2026-04-14)
+11. ~~Homepage nav + workshop teaser~~ (2026-04-14)
+12. ~~Sitemap (all 10 pages)~~ (2026-04-14)
 
-### P0 — Before Berklee Email (April 14)
+### P0 — Before Launch (blocking)
 
-6. ~~**Writing section live**~~ — Done. 4 essays + blog index at amplifyai.to/blog.html
+13. **Formspree: create hospitality form** — Go to formspree.io, create new form, replace `HOSPITALITY_FORM_ID` in hospitality.html with real form ID
+14. **Formspree spam protection** — Enable honeypot or reCAPTCHA on both forms (homepage `xpqodrkv` + hospitality form)
 
-### P1 — SEO Phase 1 (next session)
+### P1 — Soon After Launch
 
-Plan doc: `docs/plans/2026-04-13-feat-seo-content-optimization-phase1-plan.md`
-
-7. **Technical SEO fixes** — canonical URLs, absolute OG paths, favicon, title tag optimization, meta descriptions, schema improvements, fix broken internal links, img width/height
-8. **hospitality.html** — Proof Stack + trust artifact + dedicated Formspree form. Extract shared CSS from workshop.html incrementally.
-9. **workshops.html** — canonical workshop hub (upcoming + past). Homepage becomes teaser only.
-10. **about.html** — credentials, Berklee, SDSFF award, Dual Literacy philosophy
-11. **Formspree spam protection** — enable before launch
-12. **Google Business Profile** — create, optimize, start verification
+15. **Google Business Profile** — Create, optimize, start verification (manual, non-code — see plan Workstream 4)
+16. **Workshop.html CSS cleanup** — Migrate remaining inline `<style>` to use shared `.landing-*` classes (optional, cosmetic)
+17. **Homepage Step 5 tweaks** — Hero tagline update (add hospitality mention), services card linking, nav order finalization (deferred per user request)
 
 ### P2 — Post Phase 1
 
-13. **Self-host Google Fonts** (stretch, ~100-300ms LCP improvement)
-14. **Branded OG images** (1200x630 cards)
-15. **Custom 404.html**
-16. **Email capture / newsletter system**
-17. **Google Analytics (GA4)**
-18. **AI search optimization** (Phase 2 from brainstorm)
+18. **Self-host Google Fonts** (stretch, ~100-300ms LCP improvement)
+19. **Branded OG images** (1200x630 cards)
+20. **Custom 404.html**
+21. **Email capture / newsletter system**
+22. **Google Analytics (GA4)**
+23. **AI search optimization** (Phase 2 from brainstorm)
 
 ---
 
@@ -115,22 +163,28 @@ Plan doc: `docs/plans/2026-04-13-feat-seo-content-optimization-phase1-plan.md`
 
 | File | Purpose |
 |------|---------|
-| `index.html` | Homepage (all sections) |
-| `workshop.html` | April 25 workshop detail page |
+| `index.html` | Homepage (hub + teaser sections) |
+| `workshop.html` | April 25 workshop detail page (focused nav) |
+| `workshops.html` | Workshop listing hub (upcoming + past) |
+| `hospitality.html` | Boutique hotel consulting landing page |
+| `about.html` | Credentials, story, philosophy |
 | `blog.html` | Writing index page |
 | `dual-literacy.html` | Flagship essay |
 | `blog-ai-literacy-training-gap.html` | Post 1 |
 | `blog-what-schools-need.html` | Post 2 |
 | `blog-two-skills-educators.html` | Post 3 |
-| `styles.css` | Full stylesheet (includes blog/article styles) |
+| `styles.css` | Full stylesheet (includes shared `.landing-*` components) |
+| `favicon.svg` | SVG favicon ("A" lettermark in cognac) |
 | `content/site-copy.md` | Approved copy draft with Tier 1/Tier 2 labels |
 | `content/design-decisions.md` | Design direction, fonts, colors, reference sites |
 | `content/hospitality-trust-artifact.md` | Hospitality ops teardown (Alex's version) |
 | `docs/brainstorms/2026-04-13-*.md` | SEO brainstorm |
 | `docs/plans/2026-04-13-*.md` | SEO Phase 1 plan (deepened + Codex-reviewed) |
 | `images/alex-headshot.jpeg` | Hero photo |
+| `images/sdsff-alex-presenting.jpg` | Workshop OG image |
+| `images/sdsff-room-wide.jpg` | Workshop photo |
 | `robots.txt` | SEO (points to amplifyai.to) |
-| `sitemap.xml` | SEO (all 7 pages) |
+| `sitemap.xml` | SEO (all 10 pages) |
 | `CNAME` | Custom domain config for GitHub Pages |
 
 ## Design System
@@ -141,6 +195,13 @@ Plan doc: `docs/plans/2026-04-13-feat-seo-content-optimization-phase1-plan.md`
 - **Accent:** `#B8703F` (cognac)
 - **Secondary:** `#8B7355` (muted bronze)
 - **Surface:** `#E8DDD3` (card backgrounds)
+
+## Formspree Forms
+
+| Form | ID | Location | Purpose |
+|------|----|----------|---------|
+| Homepage contact | `xpqodrkv` | index.html | General inquiries |
+| Hospitality | `HOSPITALITY_FORM_ID` (placeholder) | hospitality.html | Attributed hospitality inquiries (hidden `source=hospitality` field) |
 
 ## Domain Info
 
@@ -172,6 +233,7 @@ This project must be cloned to the new laptop. Key things:
 
 ```
 cd /Users/alejandroguillen/Projects/amplifyai-website
-Read HANDOFF.md and docs/plans/2026-04-13-feat-seo-content-optimization-phase1-plan.md.
-Continue P1 SEO work: technical SEO fixes on existing pages, then hospitality.html.
+Read HANDOFF.md.
+P0: Create hospitality Formspree form, replace placeholder ID, enable spam protection on both forms.
+P1: Google Business Profile setup, workshop.html CSS cleanup, homepage Step 5 tweaks.
 ```
