@@ -470,6 +470,18 @@ section {
   border-radius: 100px;
 }
 
+/* --- Writing CTA --- */
+.writing-cta {
+  text-align: center;
+  border-top: 1px solid var(--surface);
+}
+
+.writing-cta p {
+  max-width: 480px;
+  margin: 0 auto 1.5rem;
+  color: var(--secondary);
+}
+
 /* --- Contact Section --- */
 .contact {
   border-top: 1px solid var(--surface);
