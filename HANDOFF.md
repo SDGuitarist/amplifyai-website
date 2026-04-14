@@ -2,8 +2,8 @@
 
 **Date:** 2026-04-14
 **Branch:** main
-**Phase:** Work (SEO Phase 1 — Steps 1-6 complete, pre-launch tasks remain)
-**Last session:** SEO Phase 1 implementation — technical fixes, 3 new landing pages, homepage updates
+**Phase:** Compound complete (SEO Phase 1 shipped + reviewed + documented)
+**Last session:** Review fixes applied + Compound phase (solution doc + learnings propagation)
 
 ---
 
@@ -145,7 +145,10 @@ Multi-page consulting website for Amplify AI is **live** at:
 16. ~~**Nav standardized**~~ — About link added to full-site nav on all pages. "Back to all workshops" link on workshop.html. Workshops.html links to about.html.
 17. ~~**Security fixes**~~ — Personal email removed from schema markup and raw mailto: link removed from homepage contact section. Phone + form are the contact paths.
 
-### P0 — Still Blocking
+### Compound Phase (2026-04-14)
+
+18. ~~**Solution doc written**~~ — `docs/solutions/2026-04-14-seo-phase1-landing-pages-proof-stack.md`
+19. ~~**Learnings propagated**~~ — LESSONS_LEARNED.md, compound-engineering.local.md, MEMORY.md, workflow.md, patterns.md, journal
 
 ### P1 — Soon After Launch
 
@@ -234,11 +237,17 @@ This project must be cloned to the new laptop. Key things:
 5. **Formspree** — account active (alex@alexguillenmusic.com), form ID: `xpqodrkv`
 6. **Related project:** `amplify-workshop-assets` has the brainstorm + plan docs
 
+## Three Questions (from solution doc)
+
+1. **Hardest decision?** How specific to make the hospitality trust artifact. Too generic = not credible. Too specific = implies existing clients. Landed on a worked ops teardown with real hospitality metrics but clearly labeled "Sample Engagement."
+2. **What was rejected?** (1) Upfront CSS refactor before building pages. (2) Calendly as CTA. (3) Dedicated Formspree form (deferred, not rejected). (4) Same nav on all pages (workshop.html keeps focused event nav).
+3. **Least confident about?** Whether the hospitality ops teardown reads as genuine domain expertise to an actual hotel operator. The terminology is correct but the experience is translated from music/events, not hospitality-native. First real test: whether anyone submits the hospitality form within 60 days.
+
 ## Session Start Prompt
 
 ```
 cd /Users/alejandroguillen/Projects/amplifyai-website
-Read HANDOFF.md.
-P0: Create hospitality Formspree form, replace placeholder ID, enable spam protection on both forms.
-P1: Google Business Profile setup, workshop.html CSS cleanup, homepage Step 5 tweaks.
+Read HANDOFF.md. SEO Phase 1 is complete (compound phase done).
+Next: P1 items — Google Business Profile, workshop.html CSS cleanup,
+homepage tweaks. Or start Phase 2 brainstorm (blog engine, GA4, AI search).
 ```
