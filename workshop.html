@@ -377,6 +377,83 @@
       color: var(--secondary);
     }
 
+    .register-steps {
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto 2rem;
+    }
+
+    .register-steps .step {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .register-steps .step-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 0.15rem;
+    }
+
+    .alt-payment {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--surface);
+    }
+
+    .alt-payment-label {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    /* --- FAQ Section --- */
+    .faq-section {
+      border-top: 1px solid var(--surface);
+    }
+
+    .faq-section .container {
+      max-width: 860px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .faq-item h3 {
+      font-size: 1rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
     /* --- Bottom CTA bar --- */
     .bottom-cta {
       position: fixed;
@@ -518,7 +595,7 @@
             </div>
             <div class="workshop-hero-cta">
               <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
-              <span class="seats-note">30 seats only</span>
+              <span class="seats-note">Seats are filling</span>
             </div>
           </div>
           <div class="workshop-hero-image">
@@ -605,24 +682,67 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <h2>Common Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Do I need to know anything about AI?</h3>
+            <p>No. If you can use email and a web browser, you have everything you need. We start from zero and build up. The only prerequisite is knowing your own business well.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What if I can't make it after I pay?</h3>
+            <p>Full refund up to 48 hours before the workshop. After that, your spot transfers to a future session.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is this just a prompt engineering class?</h3>
+            <p>No. Prompts are one small piece. You'll learn how to think about AI as a system, not a chatbot. You leave with a working tool built around your expertise, not a list of tricks.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What do I need to bring?</h3>
+            <p>A laptop with a web browser. That's it. We'll set up everything else during the session.</p>
+          </div>
+          <div class="faq-item">
+            <h3>I'm not a creative. Is this still for me?</h3>
+            <p>If you run a business where your expertise is the product, yes. Consultants, coaches, service providers. The framework works the same way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Register -->
     <section id="register" class="register-section">
       <div class="container">
         <h2>Reserve Your Seat</h2>
-        <p class="register-subtitle">30 seats. $150. Send payment via Venmo or Zelle and you're in. Questions? Call or text.</p>
-        <div class="payment-options">
-          <div class="payment-option">
-            <span class="payment-label">Venmo</span>
-            <span class="payment-value">@Alex-Guillen-Music</span>
+        <p class="register-subtitle">11 days left. $150. Click below to pay and lock in your spot.</p>
+        <!-- TODO: Replace https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet with your actual Square payment link -->
+        <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet" class="btn btn-primary" style="margin-bottom: 1.5rem; font-size: 1.05rem; padding: 0.85rem 2.5rem;" target="_blank" rel="noopener">Pay $150 and Register</a>
+        <div class="register-steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <span>Click the button above to pay securely through Square.</span>
           </div>
-          <div class="payment-option">
-            <span class="payment-label">Zelle</span>
-            <span class="payment-value">alex.guillen.music@gmail.com</span>
+          <div class="step">
+            <span class="step-num">2</span>
+            <span>You'll get a confirmation email with workshop details and what to prep.</span>
           </div>
         </div>
-        <a href="mailto:alex@alexguillenmusic.com?subject=Amplify Workshop - April 25" class="btn btn-primary" style="margin-bottom: 1rem;">Email to Register</a>
-        <div class="register-contact">
-          <span class="contact-label">Or reach out directly:</span>
+        <div class="alt-payment">
+          <span class="alt-payment-label">Prefer to pay another way?</span>
+          <div class="payment-options">
+            <div class="payment-option">
+              <span class="payment-label">Venmo</span>
+              <span class="payment-value">@Alex-Guillen-Music</span>
+            </div>
+            <div class="payment-option">
+              <span class="payment-label">Zelle</span>
+              <span class="payment-value">alex.guillen.music@gmail.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="register-contact" style="margin-top: 1.5rem;">
+          <span class="contact-label">Questions? Reach out:</span>
           <a href="tel:6197553246">619-755-3246</a>
           <a href="mailto:alex@alexguillenmusic.com">alex@alexguillenmusic.com</a>
         </div>
@@ -640,8 +760,8 @@
 
   <!-- Fixed bottom CTA bar -->
   <div class="bottom-cta">
-    <span class="bottom-cta-text">April 25 / 30 seats / $150</span>
-    <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+    <span class="bottom-cta-text">April 25 / Seats filling / $150</span>
+    <a href="#register" class="btn btn-primary">Register Now</a>
   </div>
 
 </body>
