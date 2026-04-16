@@ -70,23 +70,11 @@
     }
 
     .workshop-hero-text {
-      order: 2;
-    }
-
-    @media (min-width: 768px) {
-      .workshop-hero-text {
-        order: 1;
-      }
-    }
-
-    .workshop-hero-image {
       order: 1;
     }
 
-    @media (min-width: 768px) {
-      .workshop-hero-image {
-        order: 2;
-      }
+    .workshop-hero-image {
+      order: 2;
     }
 
     .workshop-hero-label {
@@ -760,7 +748,7 @@
       <div class="container">
         <h2>Reserve Your Seat</h2>
         <p style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1.25rem; line-height: 1.5;">You walk in with a laptop. You walk out with an AI system that runs your business the way you would. $150.</p>
-        <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet" class="btn btn-primary" style="margin-bottom: 1.5rem; font-size: 1.05rem; padding: 0.85rem 2.5rem;" target="_blank" rel="noopener">Reserve Your Seat</a>
+        <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet" class="btn btn-primary" style="margin-bottom: 1.5rem; font-size: 1.05rem; padding: 0.85rem 2.5rem;" target="_blank" rel="noopener" onclick="gtag('event', 'begin_checkout', {currency: 'USD', value: 150, items: [{item_name: 'Amplify Workshop'}]});">Reserve Your Seat</a>
         <div class="register-steps">
           <div class="step">
             <span class="step-num">1</span>
