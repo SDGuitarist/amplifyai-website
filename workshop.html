@@ -272,6 +272,13 @@
       line-height: 1.7;
     }
 
+    /* --- Example cards grid --- */
+    @media (min-width: 768px) {
+      .takeaway-section .container > div[style*="grid"] {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
     /* --- Social Proof (workshop version) --- */
     .workshop-proof {
       border-top: 1px solid var(--surface);
@@ -580,9 +587,11 @@
       <div class="container">
         <div class="workshop-hero-grid">
           <div class="workshop-hero-text">
-            <span class="workshop-hero-label">April 25, 2026 / North Park, San Diego</span>
-            <h1 class="workshop-hero-headline">Amplify: The Power of Human-Led AI</h1>
-            <p class="workshop-hero-sub">Four hours. Your laptop. Your projects. You build an AI system around your expertise and leave with something working.</p>
+            <span class="workshop-hero-label">Amplify: The Power of Human-Led AI</span>
+            <h1 class="workshop-hero-headline">Stop Losing Clients While You're Doing the Actual Work</h1>
+            <p class="workshop-hero-sub">Build a custom AI assistant trained on your business, your voice, and your pricing. It handles inquiries, follow-ups, and proposals the way you would. You keep it forever.</p>
+            <p style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 0.75rem;">Four hours. Your laptop. Your projects.</p>
+            <p style="font-size: 0.85rem; color: var(--secondary); margin-bottom: 1.5rem;">One hour of one-on-one AI coaching runs $150 to $250. This is four hours plus a working system you keep.</p>
             <div class="workshop-details-strip">
               <div class="detail">
                 <span class="detail-label">When:</span>
@@ -603,13 +612,20 @@
             </div>
             <div class="workshop-hero-cta">
               <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
-              <span class="seats-note">Seats are filling</span>
+              <span class="seats-note">Seats are limited</span>
             </div>
           </div>
           <div class="workshop-hero-image">
             <img src="./images/sdsff-room-wide.jpg" alt="Attendees at the Amplify AI workshop at the San Diego Streaming Film Festival" class="workshop-hero-photo" width="600" height="400" fetchpriority="high">
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- What You're Building -->
+    <section style="border-top: 1px solid var(--surface); padding: clamp(2rem, 5vw, 3rem) 0;">
+      <div class="container" style="max-width: 860px;">
+        <p style="font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; color: var(--secondary); max-width: 650px;">Here is what "AI system" actually means. You create a private AI assistant that lives in your own account. You load it with your pricing, your services, your past client emails, your voice. When a lead comes in, it drafts a response the way you would. You can edit it, expand it, and use it on anything. Proposals, follow-ups, marketing copy. It is yours and it stays with you after the workshop.</p>
       </div>
     </section>
 
@@ -622,18 +638,22 @@
           <div class="persona-card">
             <h3>Photographers</h3>
             <p>You know the photographer who responds in 2 hours books the consultation. You're responding in 8. Not because you don't care. Because you had a shoot, an edit, and three other inquiries that day. Half are tire-kickers anyway.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> a system that sends your best inquiry response in minutes, with your pricing and your qualifying questions, even while you're behind the camera.</p>
           </div>
           <div class="persona-card">
             <h3>Designers &amp; Creatives</h3>
             <p>"How much for a logo?" could be $500 or $5,000 depending on 12 factors you have to extract through conversation. You've lost projects because the proposal took too long or the initial response didn't convey enough expertise.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> a method for scoping projects and drafting proposals that conveys your expertise from the first message.</p>
           </div>
           <div class="persona-card">
             <h3>Event Planners &amp; Coordinators</h3>
             <p>You juggle venue relationships, vendor coordination, and client communication simultaneously. Your lead responses are inconsistent depending on how overwhelmed you are that week. First impressions happen there.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> consistent, professional lead responses that reflect your standards no matter how many inquiries stack up that week.</p>
           </div>
           <div class="persona-card">
             <h3>Musicians, DJs &amp; Performers</h3>
             <p>Equipment scoping, venue logistics, set list customization, pricing that changes based on day of week and travel distance. You're managing all of it in your head and losing deals when three inquiries stack up at once.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> a system that handles equipment scoping, pricing, and availability responses in your voice, so three inquiries at once doesn't mean two lost gigs.</p>
           </div>
         </div>
         <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--secondary); line-height: 1.7;">Also for: videographers, makeup artists, florists, consultants, coaches, and anyone who runs a business on their own expertise. No tech background needed.</p>
@@ -659,10 +679,24 @@
             <span>A framework for thinking about AI that doesn't expire when the tools change. Because the tools will change.</span>
           </li>
         </ul>
-        <div class="takeaway-example">
-          <h3>Example: The Writers Room Council</h3>
-          <p>At a recent session, a filmmaker volunteered to try this framework live. Five AI perspectives interrogated his script without writing a single word. By the end, he'd found the question he hadn't asked yet about his own story. He asked me to send him everything afterward. On April 25, you build your own version from scratch, tuned to your work.</p>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2rem;">
+          <div class="takeaway-example" style="margin-top: 0;">
+            <h3>Example: The Writers Room Council</h3>
+            <p>At a recent session, a filmmaker volunteered to try this framework live. Five AI perspectives interrogated his script without writing a single word. By the end, he'd found the question he hadn't asked yet about his own story. He asked me to send him everything afterward. On April 25, you build your own version from scratch, tuned to your work.</p>
+          </div>
+          <div class="takeaway-example" style="margin-top: 0;">
+            <h3>Example: The Lead Responder</h3>
+            <p>A musician built this for his gig business. Inquiry comes in while he's performing. The system responds with his pricing logic, his availability questions, his voice. Two minutes, not two days. The client books before the set is over. On April 25, you build one tuned to your business and your clients.</p>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Why Now -->
+    <section style="border-top: 1px solid var(--surface); padding: clamp(2rem, 5vw, 3rem) 0;">
+      <div class="container" style="max-width: 860px;">
+        <h2>Why Now</h2>
+        <p style="font-size: clamp(1rem, 1.1vw, 1.1rem); line-height: 1.7; color: var(--secondary); max-width: 600px;">AI capability is compounding monthly. The business owners building systems now will have six months of workflow improvement by the time their competitors start wondering if they should try it. Every week you wait is another week of slow responses, lost leads, and hours spent on work that needs your voice but not your hands.</p>
       </div>
     </section>
 
@@ -670,11 +704,27 @@
     <section class="workshop-proof">
       <div class="container">
         <h2>About Alex</h2>
-        <div class="testimonial">
-          <blockquote>
-            "Being a creative and having a business mind is a gift. Alex is offering a valuable workshop to learn how to navigate using AI as a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace) you on your creative journey, Alex is a safe bet. He is not only 'tech savvy', but a very talented creative. His music presentations are as authentic as they get."
-          </blockquote>
-          <cite>Heather Hilton</cite>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+          <div class="testimonial" style="margin-bottom: 0;">
+            <blockquote>
+              <!-- PLACEHOLDER: Replace with real quote from SDSFF Apr 11 attendee -->
+              "Quote from SD Streaming Film Festival workshop attendee."
+            </blockquote>
+            <cite>SDSFF Attendee 1, Role &amp; Business</cite>
+          </div>
+          <div class="testimonial" style="margin-bottom: 0;">
+            <blockquote>
+              <!-- PLACEHOLDER: Replace with real quote from SDSFF Apr 11 attendee -->
+              "Quote from SD Streaming Film Festival workshop attendee."
+            </blockquote>
+            <cite>SDSFF Attendee 2, Role &amp; Business</cite>
+          </div>
+          <div class="testimonial" style="margin-bottom: 0;">
+            <blockquote>
+              "Being a creative and having a business mind is a gift. Alex is offering a valuable workshop to learn how to navigate using AI as a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace) you on your creative journey, Alex is a safe bet. He is not only 'tech savvy', but a very talented creative. His music presentations are as authentic as they get."
+            </blockquote>
+            <cite>Heather Hilton, Media Personality &amp; Podcaster</cite>
+          </div>
         </div>
         <ul class="credentials">
           <li>2,500+ live events</li>
@@ -723,9 +773,8 @@
     <section id="register" class="register-section">
       <div class="container">
         <h2>Reserve Your Seat</h2>
-        <p class="register-subtitle">11 days left. $150. Click below to pay and lock in your spot.</p>
-        <!-- TODO: Replace https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet with your actual Square payment link -->
-        <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet" class="btn btn-primary" style="margin-bottom: 1.5rem; font-size: 1.05rem; padding: 0.85rem 2.5rem;" target="_blank" rel="noopener">Pay $150 and Register</a>
+        <p class="register-subtitle">$150. Registration closes April 22 or when seats fill, whichever comes first.</p>
+        <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet" class="btn btn-primary" style="margin-bottom: 1.5rem; font-size: 1.05rem; padding: 0.85rem 2.5rem;" target="_blank" rel="noopener">Reserve Your Seat</a>
         <div class="register-steps">
           <div class="step">
             <span class="step-num">1</span>
@@ -768,8 +817,8 @@
 
   <!-- Fixed bottom CTA bar -->
   <div class="bottom-cta">
-    <span class="bottom-cta-text">April 25 / Seats filling / $150</span>
-    <a href="#register" class="btn btn-primary">Register Now</a>
+    <span class="bottom-cta-text">April 25 / Seats are limited / $150</span>
+    <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
   </div>
 
 </body>
