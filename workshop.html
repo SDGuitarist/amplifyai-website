@@ -35,7 +35,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -145,6 +146,48 @@
       font-size: 0.9rem;
       font-weight: 500;
       color: var(--secondary);
+    }
+
+    /* Value prop line below CTA */
+    .hero-value-prop {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      margin-top: 1.25rem;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+
+    /* Larger CTA button */
+    .btn-hero-cta {
+      font-size: 1.1rem;
+      padding: 1rem 2.5rem;
+    }
+
+    /* Hide hero image on mobile to keep CTA above fold */
+    @media (max-width: 767px) {
+      .workshop-hero-image {
+        display: none;
+      }
+      .workshop-hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .btn-hero-cta {
+        width: 100%;
+        text-align: center;
+        font-size: 1.15rem;
+        padding: 1.1rem 2rem;
+      }
+      .workshop-hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+      .workshop-hero-sub {
+        margin-bottom: 1rem;
+      }
+      .workshop-details-strip {
+        margin-bottom: 1.25rem;
+      }
     }
 
     /* --- Who This Is For --- */
@@ -653,11 +696,9 @@
       <div class="container">
         <div class="workshop-hero-grid">
           <div class="workshop-hero-text">
-            <span class="workshop-hero-label">Amplify: The Power of Human-Led AI</span>
+            <span class="workshop-hero-label">Hands-On AI Workshop / San Diego</span>
             <h1 class="workshop-hero-headline">Four Hours. One System. Your Business Responds Even When You Can't.</h1>
-            <p class="workshop-hero-sub">Build a custom AI assistant trained on your business, your voice, and your pricing. It handles inquiries, follow-ups, and proposals the way you would. You keep it forever.</p>
-            <p style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 0.75rem;">Four hours. Your laptop. Your projects.</p>
-            <p style="font-size: 0.85rem; color: var(--secondary); margin-bottom: 1.5rem;">One hour of one-on-one AI coaching runs $150 to $250. This is four hours plus a working system you keep.</p>
+            <p class="workshop-hero-sub">Build a custom AI assistant trained on your business, your voice, and your pricing. You keep it forever.</p>
             <div class="workshop-details-strip">
               <div class="detail">
                 <span class="detail-label">When:</span>
@@ -665,21 +706,18 @@
               </div>
               <div class="detail">
                 <span class="detail-label">Where:</span>
-                <span class="detail-value">Expressive Arts San Diego</span>
+                <span class="detail-value">North Park, San Diego</span>
               </div>
               <div class="detail">
                 <span class="detail-label">Price:</span>
                 <span class="detail-value">$150</span>
               </div>
-              <div class="detail">
-                <span class="detail-label">Bring:</span>
-                <span class="detail-value">Laptop</span>
-              </div>
             </div>
             <div class="workshop-hero-cta">
-              <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
-              <span class="seats-note">Seats are limited</span>
+              <a href="#register" class="btn btn-primary btn-hero-cta">Reserve Your Seat</a>
+              <span class="seats-note">Only 30 seats</span>
             </div>
+            <p class="hero-value-prop">One hour of one-on-one AI coaching runs $150 to $250. This is four hours plus a working system you keep.</p>
           </div>
           <div class="workshop-hero-image">
             <img src="./images/sdsff-room-wide.jpg" alt="Attendees at the Amplify AI workshop at the San Diego Streaming Film Festival" class="workshop-hero-photo" width="600" height="400" fetchpriority="high">
@@ -1021,6 +1059,38 @@
         coupon: activeCode || ''
       });
     }
+
+    // --- Scroll depth tracking ---
+    // Only 3 scroll events out of 186 users = nobody is getting past the hero
+    // This fires at 25%, 50%, 75% so we can see where people drop off
+    (function() {
+      var firedDepths = {};
+      function checkScroll() {
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return;
+        var pct = Math.round((window.scrollY / docHeight) * 100);
+        [25, 50, 75].forEach(function(threshold) {
+          if (pct >= threshold && !firedDepths[threshold]) {
+            firedDepths[threshold] = true;
+            if (typeof gtag === 'function') {
+              gtag('event', 'scroll_depth', { depth: threshold + '%' });
+            }
+          }
+        });
+      }
+      window.addEventListener('scroll', checkScroll, { passive: true });
+    })();
+
+    // --- CTA button click tracking ---
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('.btn-primary');
+      if (btn && typeof gtag === 'function') {
+        gtag('event', 'cta_click', {
+          cta_text: btn.textContent.trim(),
+          cta_location: btn.closest('section') ? btn.closest('section').id || 'hero' : 'sticky_bar'
+        });
+      }
+    });
 
     // Check URL for code on page load
     (function() {
