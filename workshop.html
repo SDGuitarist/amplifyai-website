@@ -499,6 +499,81 @@
     .footer {
       padding-bottom: 5rem;
     }
+
+    /* --- Discount Banner --- */
+    .discount-banner {
+      display: none;
+      background: var(--accent);
+      color: var(--white);
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .discount-banner.active {
+      display: block;
+    }
+
+    .price-original {
+      text-decoration: line-through;
+      opacity: 0.6;
+      margin-right: 0.25rem;
+    }
+
+    /* --- Discount Code Input --- */
+    .discount-code-form {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .discount-code-form label {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    .discount-code-form input {
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--surface);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      width: 140px;
+      text-transform: uppercase;
+    }
+
+    .discount-code-form button {
+      padding: 0.45rem 1rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: var(--font-body);
+      cursor: pointer;
+    }
+
+    .discount-code-form .code-message {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+
+    .discount-code-form .code-message.success {
+      color: #2d7d46;
+    }
+
+    .discount-code-form .code-message.error {
+      color: #b54040;
+    }
   </style>
 
   <!-- Structured Data -->
@@ -546,6 +621,9 @@
   </script>
 </head>
 <body>
+
+  <!-- Discount Banner (shown when valid code is in URL or entered manually) -->
+  <div class="discount-banner" id="discountBanner"></div>
 
   <!-- NAV: event-focused -->
   <nav class="nav">
@@ -748,7 +826,13 @@
       <div class="container">
         <h2>Reserve Your Seat</h2>
         <p style="font-size: 1.05rem; color: var(--primary); margin-bottom: 1.25rem; line-height: 1.5;">You walk in with a laptop. You walk out with an AI system that runs your business the way you would. $150.</p>
-        <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet" class="btn btn-primary" style="margin-bottom: 1.5rem; font-size: 1.05rem; padding: 0.85rem 2.5rem;" target="_blank" rel="noopener" onclick="gtag('event', 'begin_checkout', {currency: 'USD', value: 150, items: [{item_name: 'Amplify Workshop'}]});">Reserve Your Seat</a>
+        <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet" class="btn btn-primary" id="checkoutBtn" style="margin-bottom: 1.5rem; font-size: 1.05rem; padding: 0.85rem 2.5rem;" target="_blank" rel="noopener" onclick="handleCheckoutClick()">Reserve Your Seat</a>
+        <div class="discount-code-form" id="discountForm">
+          <label for="discountInput">Have a discount code?</label>
+          <input type="text" id="discountInput" placeholder="e.g. EVOLVE25" maxlength="20" autocomplete="off">
+          <button type="button" onclick="applyManualCode()">Apply</button>
+          <div class="code-message" id="codeMessage"></div>
+        </div>
         <div class="register-steps">
           <div class="step">
             <span class="step-num">1</span>
@@ -794,6 +878,159 @@
     <span class="bottom-cta-text">April 25 / Seats are limited / $150</span>
     <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
   </div>
+
+  <script>
+    // --- Discount Code System ---
+    // Square checkout URLs by price tier
+    var SQUARE_FULL = 'https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NBK3YZYZEID7KGLAHDVTMBTY?src=sheet';
+    // TODO: Replace these with real Square checkout links at the discounted prices
+    var SQUARE_PARTNER = 'https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/LXDWVF5MYEFCTXGAFQTUWU3O?src=sheet';
+    var SQUARE_COMMUNITY = 'https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/ZLXQKQC5WIW6ZB2G27JZSOBT?src=sheet';
+
+    // Tier 1 partner codes (25% off = $112.50)
+    var PARTNER_CODES = {
+      'EVOLVE25':   'Evolution Room',
+      'PROMPT25':   'Blueqix',
+      'UCSDAI25':   'UC San Diego Design Lab',
+      'SDMAAC25':   'SD Music And Art Company',
+      'ARTON25':    'Art on 30th',
+      'SDNET25':    'SD Networking Events',
+      'STRIVE25':   'Strive Networking',
+      'MOTR25':     'Media On The Rise',
+      'TWINE25':    'Teresa from Twine',
+      'BVOU25':     'BVOU Club',
+      'NAWBO25':    'NAWBO San Diego',
+      'AMA25':      'AMA San Diego',
+      'SMALLBIZ25': 'Small Ventures',
+      'SOCIAL25':   'Social Girl Marketing',
+      'DDX25':      'DDX Conferences'
+    };
+
+    // Tier 2 community code (20% off = $120)
+    var COMMUNITY_CODES = {
+      'SDCREATIVE': 'SD Creative Community'
+    };
+
+    var activeCode = null;
+    var activeDiscount = null;
+
+    function applyCode(code) {
+      code = code.trim().toUpperCase();
+      if (PARTNER_CODES[code]) {
+        activeCode = code;
+        activeDiscount = { price: 112.50, label: '25% off', partner: PARTNER_CODES[code], url: SQUARE_PARTNER };
+        updatePage();
+        return true;
+      } else if (COMMUNITY_CODES[code]) {
+        activeCode = code;
+        activeDiscount = { price: 120, label: '20% off', partner: COMMUNITY_CODES[code], url: SQUARE_COMMUNITY };
+        updatePage();
+        return true;
+      }
+      return false;
+    }
+
+    function updatePage() {
+      if (!activeDiscount) return;
+
+      var d = activeDiscount;
+      var priceStr = d.price % 1 === 0 ? '$' + d.price : '$' + d.price.toFixed(2);
+
+      // Show discount banner
+      var banner = document.getElementById('discountBanner');
+      banner.textContent = d.label + ' applied. ' + activeCode + ' via ' + d.partner + '. Your price: ' + priceStr;
+      banner.classList.add('active');
+
+      // Update hero price
+      var priceDetail = document.querySelector('.workshop-details-strip .detail:nth-child(3) .detail-value');
+      if (priceDetail) {
+        priceDetail.innerHTML = '<span class="price-original">$150</span> ' + priceStr;
+      }
+
+      // Update register section price text
+      var registerPrice = document.querySelector('#register .container > p');
+      if (registerPrice) {
+        registerPrice.innerHTML = 'You walk in with a laptop. You walk out with an AI system that runs your business the way you would. <span class="price-original">$150</span> ' + priceStr + '.';
+      }
+
+      // Update checkout button URL
+      var btn = document.getElementById('checkoutBtn');
+      if (btn) {
+        btn.href = d.url;
+      }
+
+      // Update bottom CTA bar text
+      var bottomText = document.querySelector('.bottom-cta-text');
+      if (bottomText) {
+        bottomText.innerHTML = 'April 25 / Seats are limited / <span class="price-original">$150</span> ' + priceStr;
+      }
+
+      // Hide the code input form since a code is already applied
+      var form = document.getElementById('discountForm');
+      if (form) {
+        form.style.display = 'none';
+      }
+
+      // Fire GA event
+      if (typeof gtag === 'function') {
+        gtag('event', 'discount_applied', {
+          discount_code: activeCode,
+          discount_partner: d.partner,
+          discount_price: d.price
+        });
+      }
+    }
+
+    function applyManualCode() {
+      var input = document.getElementById('discountInput');
+      var msg = document.getElementById('codeMessage');
+      var code = input.value.trim().toUpperCase();
+
+      if (!code) {
+        msg.textContent = '';
+        msg.className = 'code-message';
+        return;
+      }
+
+      if (applyCode(code)) {
+        msg.textContent = 'Discount applied.';
+        msg.className = 'code-message success';
+      } else {
+        msg.textContent = 'Code not recognized. Check the spelling and try again.';
+        msg.className = 'code-message error';
+      }
+    }
+
+    function handleCheckoutClick() {
+      var price = activeDiscount ? activeDiscount.price : 150;
+      gtag('event', 'begin_checkout', {
+        currency: 'USD',
+        value: price,
+        items: [{ item_name: 'Amplify Workshop' }],
+        coupon: activeCode || ''
+      });
+    }
+
+    // Check URL for code on page load
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get('code');
+      if (code) {
+        applyCode(code);
+      }
+
+      // Also handle Enter key in the input
+      var input = document.getElementById('discountInput');
+      if (input) {
+        input.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            applyManualCode();
+          }
+        });
+      }
+    })();
+  </script>
 
 </body>
 </html>
