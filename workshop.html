@@ -886,6 +886,7 @@
     // TODO: Replace these with real Square checkout links at the discounted prices
     var SQUARE_PARTNER = 'https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/LXDWVF5MYEFCTXGAFQTUWU3O?src=sheet';
     var SQUARE_COMMUNITY = 'https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/ZLXQKQC5WIW6ZB2G27JZSOBT?src=sheet';
+    var SQUARE_CHAMPION = 'https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/WG2LSDNGMZDZFRG6Z4VRSEER?src=sheet';
 
     // Tier 1 partner codes (25% off = $112.50)
     var PARTNER_CODES = {
@@ -911,6 +912,11 @@
       'SDCREATIVE': 'SD Creative Community'
     };
 
+    // Champion network code (33% off = $100)
+    var CHAMPION_CODES = {
+      'CHAMPION': 'Amplify Network'
+    };
+
     var activeCode = null;
     var activeDiscount = null;
 
@@ -924,6 +930,11 @@
       } else if (COMMUNITY_CODES[code]) {
         activeCode = code;
         activeDiscount = { price: 120, label: '20% off', partner: COMMUNITY_CODES[code], url: SQUARE_COMMUNITY };
+        updatePage();
+        return true;
+      } else if (CHAMPION_CODES[code]) {
+        activeCode = code;
+        activeDiscount = { price: 100, label: '$50 off', partner: CHAMPION_CODES[code], url: SQUARE_CHAMPION };
         updatePage();
         return true;
       }
