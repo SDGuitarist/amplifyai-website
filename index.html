@@ -2,105 +2,467 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH4JJG7QRY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FH4JJG7QRY');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Consulting & Workshops in San Diego | Amplify AI</title>
+  <title>The Filmmaker's Framework: AI Ethics Workshop | May 30</title>
 
   <!-- SEO -->
-  <meta name="description" content="AI consulting and workshops for creative businesses and boutique hotels in San Diego. Built by a musician running 5 AI apps daily. Book a free intro call.">
-  <link rel="canonical" href="https://amplifyai.to/">
+  <meta name="description" content="AI ethics frameworks for filmmakers. Protect your rights, your credit, and your craft. May 30, 2026. Expressive Arts San Diego.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="AI Consulting & Workshops in San Diego | Amplify AI">
-  <meta property="og:description" content="AI consulting and workshops for creative businesses and boutique hotels in San Diego. Built by a musician running 5 AI apps daily. Book a free intro call.">
-  <meta property="og:image" content="https://amplifyai.to/images/alex-headshot.jpeg">
-  <meta property="og:url" content="https://amplifyai.to/">
+  <meta property="og:title" content="The Filmmaker's Framework: AI Ethics Workshop | May 30">
+  <meta property="og:description" content="AI ethics frameworks filmmakers can actually use. Four hours. Three decision tools. Protect your rights, your credit, and your craft. May 30, Expressive Arts San Diego.">
   <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI Consulting & Workshops in San Diego | Amplify AI">
-  <meta name="twitter:description" content="AI consulting and workshops for creative businesses and boutique hotels in San Diego. Built by a musician running 5 AI apps daily. Book a free intro call.">
-  <meta name="twitter:image" content="https://amplifyai.to/images/alex-headshot.jpeg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    /* --- Reset & Base --- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="./styles.css">
+    :root {
+      --bg: #faf5f2;
+      --text: #2a0a0a;
+      --accent: #8B2020;
+      --accent-hover: #6e1818;
+      --secondary: #6a4040;
+      --surface: #f0e4e0;
+      --white: #fefafa;
+      --font-heading: 'Fraunces', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+    }
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Amplify AI",
-    "url": "https://amplifyai.to/",
-    "description": "AI consulting and workshops for creative businesses and boutique hotels in San Diego.",
-    "image": "https://amplifyai.to/images/alex-headshot.jpeg",
-    "telephone": "+1-619-755-3246",
-    "priceRange": "$$",
-    "areaServed": {
-      "@type": "City",
-      "name": "San Diego"
-    },
-    "knowsAbout": ["Artificial Intelligence", "AI Automation", "Business Process Optimization", "AI Workshops"],
-    "founder": {
-      "@type": "Person",
-      "name": "Alex Guillen",
-      "jobTitle": "AI Consultant",
-      "knowsAbout": ["Artificial Intelligence", "Music Performance", "Hospitality Operations"],
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Berklee College of Music"
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.1vw, 1.125rem);
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: rgba(139, 32, 32, 0.2); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; transition: color 0.2s ease; }
+    a:hover { color: var(--accent-hover); }
+
+    h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; color: var(--text); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1.5rem; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+    section { padding: clamp(3rem, 6vw, 5rem) 0; }
+
+    /* --- Nav --- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 240, 235, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--surface);
+      padding: 0.75rem 1.5rem;
+    }
+    .nav-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--secondary);
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
+    }
+
+    /* --- Buttons --- */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    /* --- Hero --- */
+    .hero {
+      padding: clamp(3rem, 8vw, 5rem) 0;
+      border-bottom: 1px solid var(--surface);
+    }
+    .hero-label {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: var(--secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+    }
+    .details-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .detail { display: flex; align-items: center; gap: 0.4rem; }
+    .detail-label { font-weight: 600; color: var(--text); }
+    .detail-value { color: var(--secondary); }
+    .hero-cta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+    .hero-cta .seats-note { font-size: 0.9rem; font-weight: 500; color: var(--secondary); }
+    .hero-value-prop {
+      font-size: 0.85rem;
+      color: var(--secondary);
+      margin-top: 1.25rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .btn-primary {
+        width: 100%;
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
       }
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "San Diego",
-      "addressRegion": "CA",
-      "addressCountry": "US"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/in/alexguillenmusic",
-      "https://www.instagram.com/alexguillenmusic"
-    ]
-  }
-  </script>
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+    }
+
+    /* --- Sections --- */
+    .bordered { border-top: 1px solid var(--surface); }
+    .bg-white { background: var(--white); }
+
+    /* --- Persona Cards --- */
+    .persona-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .persona-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    }
+    .persona-card {
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+    }
+    .persona-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent); }
+    .persona-card p { font-size: 0.95rem; color: var(--secondary); line-height: 1.6; }
+
+    /* --- Takeaway List --- */
+    .takeaway-list {
+      list-style: none;
+      display: grid;
+      gap: 1.25rem;
+    }
+    .takeaway-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      font-size: clamp(1rem, 1.1vw, 1.1rem);
+      line-height: 1.6;
+    }
+    .takeaway-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.1rem;
+    }
+
+    /* --- Example Cards --- */
+    .example-card {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.75rem 2rem;
+    }
+    .example-card h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem; }
+    .example-card p { font-size: 0.95rem; color: var(--secondary); line-height: 1.7; }
+
+    .example-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    @media (min-width: 768px) {
+      .example-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* --- Proof / Credentials --- */
+    .credentials {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+    .credentials li {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--secondary);
+      padding: 0.4rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 100px;
+    }
+    .event-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .event-badge {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--secondary);
+      padding: 0.5rem 1rem;
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 100px;
+    }
+
+    blockquote {
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+    cite {
+      font-style: normal;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary);
+    }
+
+    /* --- FAQ --- */
+    .faq-list { display: grid; gap: 1.25rem; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+    }
+    .faq-item h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .faq-item p { font-size: 0.95rem; color: var(--secondary); line-height: 1.6; }
+
+    /* --- Register --- */
+    .register { text-align: center; }
+    .register p { margin: 0 auto; }
+    .register-steps {
+      text-align: left;
+      max-width: 400px;
+      margin: 0 auto 2rem;
+    }
+    .step {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-top: 0.15rem;
+    }
+    /* --- Contact Form --- */
+    .register-form {
+      max-width: 400px;
+      margin: 0 auto 2rem;
+      text-align: left;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      border: 1px solid var(--surface);
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text);
+      transition: border-color 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .form-submit {
+      width: 100%;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      background: var(--accent);
+      color: var(--white);
+      transition: background 0.2s ease, transform 0.1s ease;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+    .form-note {
+      font-size: 0.8rem;
+      color: var(--secondary);
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .contact-block .contact-label {
+      font-size: 0.85rem;
+      color: var(--secondary);
+    }
+    .contact-block a { font-weight: 500; font-size: 1rem; }
+
+    /* --- Footer --- */
+    .footer {
+      border-top: 1px solid var(--surface);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--secondary);
+    }
+
+    /* --- Bottom CTA Bar --- */
+    .bottom-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(44, 36, 33, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      z-index: 100;
+      border-top: 1px solid rgba(139, 32, 32, 0.3);
+    }
+    .bottom-cta-text {
+      color: var(--bg);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .bottom-cta .btn-primary {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 480px) {
+      .bottom-cta-text { font-size: 0.8rem; }
+      .bottom-cta .btn-primary { padding: 0.5rem 1.25rem; font-size: 0.8rem; }
+    }
+
+    .footer { padding-bottom: 5rem; }
+  </style>
 </head>
 <body>
 
-  <!-- NAV: full-site -->
+  <!-- Nav -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-brand">Amplify AI</a>
+      <a href="https://amplifyai.to" class="nav-brand">Amplify AI</a>
       <ul class="nav-links">
-        <li><a href="/about.html">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="/workshops.html">Workshops</a></li>
-        <li><a href="/blog.html">Writing</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#who">Who It's For</a></li>
+        <li><a href="#takeaway">What You Get</a></li>
+        <li><a href="#register">Register</a></li>
       </ul>
-      <div class="nav-social">
-        <a href="https://www.linkedin.com/in/alexguillenmusic" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/alexguillenmusic" target="_blank" rel="noopener" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-      </div>
     </div>
   </nav>
 
@@ -109,134 +471,212 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <div class="hero-content">
-          <img src="./images/alex-headshot.jpeg" alt="Alex Guillen" class="hero-photo" width="220" height="220" fetchpriority="high">
-          <span class="hero-label">AI Dual Literacy</span>
-          <h1 class="hero-headline">I build AI systems that run my music business. Now I'm teaching what worked.</h1>
-          <p class="hero-tagline">I help creative businesses and small teams use AI the way I use it. A collaborator, not a replacement.</p>
-          <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        <span class="hero-label">AI Ethics Workshop / Expressive Arts San Diego</span>
+        <h1>Frameworks Filmmakers Can Actually Use.</h1>
+        <p class="hero-sub">Know where the lines are on AI. Protect your rights, your credit, and your craft. Four hours with the decision tools that work on your next project.</p>
+        <div class="details-strip">
+          <div class="detail">
+            <span class="detail-label">When:</span>
+            <span class="detail-value">Sat, May 30 / 10 AM - 2 PM</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Where:</span>
+            <span class="detail-value">Expressive Arts San Diego</span>
+          </div>
+          <div class="detail">
+            <span class="detail-label">Price:</span>
+            <span class="detail-value">$175</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+          <span class="seats-note">Limited seats</span>
+        </div>
+        <p class="hero-value-prop">Original frameworks. 40+ primary sources. Workshop-tested and fact-checked. Not a lecture. Decision tools you use on set.</p>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bordered">
+      <div class="container">
+        <p style="font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; color: var(--secondary); max-width: 650px;">The people in front of the camera are protected. SAG-AFTRA covers digital likenesses. The WGA restricts AI writing credit. But the people behind the camera, the writers, composers, editors, and VFX artists, have far fewer protections. The rules are being written right now, and most filmmakers have never read the contracts that affect their work. This workshop gives you the frameworks to navigate that gap.</p>
+      </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section id="who" class="bordered">
+      <div class="container">
+        <h2>Who This Is For</h2>
+        <p style="font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; margin-bottom: 2rem; max-width: 600px;">Filmmakers who know AI is showing up in their work and do not have a clear framework for deciding what is safe, what is ethical, and what protects their rights. You are not anti-AI. You are uncertain. You want someone who has done the reading.</p>
+        <div class="persona-grid">
+          <div class="persona-card">
+            <h3>Writers &amp; Screenwriters</h3>
+            <p>The WGA says AI cannot be a writer. But the rules on AI-assisted writing leave a gap you need to understand. Training data protections are new and untested.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> a clear map of what the WGA agreement covers, where it stops, and how to protect your work in the gap.</p>
+          </div>
+          <div class="persona-card">
+            <h3>Directors &amp; Producers</h3>
+            <p>You make the decisions about whether AI shows up on your production. You carry the liability if consent or disclosure is mishandled. Festival rules are often stricter than union rules.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> frameworks for making those calls with your eyes open, from pre-production through submission.</p>
+          </div>
+          <div class="persona-card">
+            <h3>Composers &amp; Music Supervisors</h3>
+            <p>The actors are protected. The writers have some coverage. Composers have almost none. No union training data restrictions. AI music generation is permitted in most festival categories where AI performance is banned.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> the full picture of where you stand, what protections exist, and what you need to advocate for.</p>
+          </div>
+          <div class="persona-card">
+            <h3>Post-Production &amp; VFX</h3>
+            <p>Your work is invisible to the audience. That makes it easier to replace quietly. Behind-the-camera AI is lower risk for the production. It is not lower risk for you.</p>
+            <p style="margin-top: 0.75rem;"><strong>You leave with:</strong> the tools to articulate why your work matters and how to protect it as AI capability grows.</p>
+          </div>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--secondary); line-height: 1.7;">Also relevant for: documentary filmmakers, film students, festival organizers, and anyone making decisions about AI use in creative production. No technical background needed.</p>
+      </div>
+    </section>
+
+    <!-- What You Walk Away With -->
+    <section id="takeaway" class="bordered bg-white">
+      <div class="container">
+        <h2>What You Walk Away With</h2>
+        <p style="color: var(--secondary); line-height: 1.7; margin-bottom: 2rem;">Not a lecture on policy. Not a list of what you cannot do. Decision tools that work on your next project.</p>
+        <ul class="takeaway-list">
+          <li>
+            <span class="takeaway-num">1</span>
+            <span><strong>The protection gap, made visible.</strong> You understand why performers have protections that writers and composers do not, and what that means for your role specifically.</span>
+          </li>
+          <li>
+            <span class="takeaway-num">2</span>
+            <span><strong>A consent framework that works.</strong> The 3 C's: Consent, Compensation, Credit. Applied to your specific production context, union or non-union.</span>
+          </li>
+          <li>
+            <span class="takeaway-num">3</span>
+            <span><strong>A decision tool you will actually use.</strong> Three Questions. Does it honor my creative intent? Can I stand behind it? Would I put my name on it? Works on every project, every AI tool, every decision point.</span>
+          </li>
+          <li>
+            <span class="takeaway-num">4</span>
+            <span><strong>Documentation practices that protect you.</strong> The generation log, festival disclosure requirements, copyright implications of human creative control. Practical steps, not theory.</span>
+          </li>
+          <li>
+            <span class="takeaway-num">5</span>
+            <span><strong>The conversation, with peers.</strong> You are in a room with filmmakers who share your concerns. The frameworks give you shared language for a conversation that is otherwise scattered and anxious.</span>
+          </li>
+        </ul>
+        <div class="example-grid">
+          <div class="example-card">
+            <h3>The Behind the Camera / In Front of It Analysis</h3>
+            <p>SAG-AFTRA protects performers from AI replicas. Writers have training data restrictions. Composers have almost nothing. This asymmetry is the central argument of the manifesto. At the workshop, you map exactly where your role falls and what protections apply to your work.</p>
+          </div>
+          <div class="example-card">
+            <h3>The Three Questions in Practice</h3>
+            <p>A director considering AI for pre-visualization. A composer using AI to generate temp tracks. A screenwriter brainstorming with AI assistance. Each scenario gets the same three questions applied, and each produces a different answer. You practice on your own projects, live, with feedback.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Story -->
-    <section id="story" class="story">
+    <!-- Why Now -->
+    <section class="bordered">
       <div class="container">
-        <h2>Start Here</h2>
-        <p>Tuesday afternoon. A lead comes in from a venue you played last year. You start drafting a response, get pulled into rehearsal, come back two hours later. The moment's gone. Not because you didn't know what to say. Because you couldn't be in two places at once.</p>
-        <p>That was my life for years. 2,500 gigs. A Berklee degree. Thirty years of reading rooms and building relationships. And still losing opportunities because the business side ate all the hours that belonged to the creative side.</p>
-        <p>So I started building. Not theory. Real systems. Five apps that handle my leads, prep my gigs, track venue intel, and talk to each other. I'm not an engineer. I'm a working musician who got tired of the gap between what I know and what I could actually act on in a day.</p>
-        <p>The AI didn't make me faster. It made me more consistent. It let me show up as the version of myself that wins the gig, every time, not just when I had the energy. And I kept thinking: this isn't just a music thing. This is anyone who's good at what they do but can't be in five places at once.</p>
-        <p>So now I'm teaching what worked.</p>
+        <h2>Why Now</h2>
+        <p style="font-size: clamp(1rem, 1.1vw, 1.1rem); line-height: 1.7; color: var(--secondary); max-width: 600px;">The rules on AI in film are being written right now. Union contracts are being renegotiated. Festival policies are changing every season. Studios are making decisions about AI use in production without waiting for consensus. The filmmakers who understand the landscape now will be the ones shaping the conversation, not reacting to it. These frameworks give you the tools to be in that conversation with clarity.</p>
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="services">
+    <!-- About Alex -->
+    <section class="bordered">
       <div class="container">
-        <h2>What I Do</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <h3>Workshops</h3>
-            <p>Hands-on AI training for teams and groups. From 90 minutes to full-day. You leave with workflows you can use Monday morning, not slides you'll forget by Tuesday.</p>
-            <a href="#contact" class="card-link">Get in touch &rarr;</a>
-          </div>
-          <div class="service-card">
-            <h3>AI Readiness Assessment</h3>
-            <p>I walk through your actual workflows, find where AI saves you the most time, and set up one thing for you on the spot. You walk away with a working quick win and a report with three more you can do on your own.</p>
-            <a href="#contact" class="card-link">Get in touch &rarr;</a>
-          </div>
-          <div class="service-card">
-            <h3>Team Training</h3>
-            <p>AI training built around what your team actually does. Not generic tutorials. Your workflows, your tools, your people.</p>
-            <a href="#contact" class="card-link">Get in touch &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Mid CTA -->
-    <section class="mid-cta">
-      <div class="container">
-        <p>Want to know what I'd build for your business?</p>
-        <a href="#contact" class="btn btn-outline">Let's start a conversation</a>
-      </div>
-    </section>
-
-    <!-- Workshops (teaser — full listing at /workshops.html) -->
-    <section id="workshops" class="workshops">
-      <div class="container">
-        <h2>Workshops</h2>
-        <div class="workshop-cards">
-          <div class="workshop-card">
-            <h3>Amplify: The Power of Human-Led AI</h3>
-            <div class="workshop-meta">
-              <strong>Date:</strong> Saturday, April 25, 2026<br>
-              <strong>Location:</strong> Expressive Arts San Diego, North Park<br>
-              <strong>Price:</strong> $150 / 30 seats
-            </div>
-            <p class="workshop-desc">A hands-on workshop for creatives and small business owners. Four hours. Your laptop. Your projects. You leave with something working.</p>
-            <a href="./workshop.html" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-        <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--secondary);"><a href="/workshops.html">See all workshops & past events &rarr;</a></p>
-      </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section id="proof" class="proof">
-      <div class="container">
-        <h2>What People Say</h2>
-        <div class="testimonial">
+        <h2>About Alex</h2>
+        <p style="font-size: clamp(1rem, 1.1vw, 1.1rem); line-height: 1.7; color: var(--secondary); max-width: 600px; margin-bottom: 1.5rem;">Working musician with 30+ years of performance and 2,500+ events. Berklee College of Music. He turned a complicated AI ethics conversation into frameworks filmmakers can actually use. The manifesto is 11 pages, 40+ primary sources, and a 10-point editorial verification process. The IP is registered.</p>
+        <div style="margin-bottom: 2rem;">
           <blockquote>
-            "Being a creative and having a business mind is a gift. Alex Guillen is offering a valuable workshop to learn a helpful approach to learn how to navigate using AI for a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace) you on your creative journey, Alex is a safe bet. Alex himself is not only 'tech savvy', but a very talented creative. His music presentations are as authentic as they get. I don't know about my other, entrepreneur friends.. but I can say for myself that this offering is going to add so much value for my business. I'm excited to learn more."
+            "Alex is offering a valuable workshop to learn how to navigate using AI as a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace) you on your creative journey, Alex is a safe bet."
           </blockquote>
-          <cite>Heather Hilton</cite>
+          <cite>Heather Hilton, Media Personality &amp; Podcaster</cite>
         </div>
         <ul class="credentials">
+          <li>11-page ethics manifesto</li>
+          <li>40+ primary sources verified</li>
+          <li>3 original decision frameworks</li>
           <li>2,500+ live events</li>
-          <li>30 years in music &amp; hospitality</li>
+          <li>30 years in music &amp; film</li>
           <li>Berklee College of Music</li>
-          <li>5 AI apps built &amp; running</li>
-          <li>Founder, Pacific Flow Entertainment</li>
         </ul>
+        <div class="event-badges">
+          <span class="event-badge">Amplify AI Ethics Workshop (Apr 25)</span>
+          <span class="event-badge">SD Streaming Film Festival (Apr 4 &amp; 11)</span>
+          <span class="event-badge">FilmNet AI Panel (Oct 2025)</span>
+        </div>
       </div>
     </section>
 
-    <!-- Writing -->
-    <section class="writing-cta">
+    <!-- FAQ -->
+    <section class="bordered">
       <div class="container">
-        <h2>Writing</h2>
-        <p>I write about what AI literacy actually looks like when you take it seriously. Not hype, not fear. What happens when working professionals meet these tools with real expertise.</p>
-        <a href="/blog.html" class="btn btn-outline">Read the essays &rarr;</a>
+        <h2>Common Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Is this anti-AI?</h3>
+            <p>No. Alex uses AI every day in his business. This workshop is about knowing where the lines are, not about avoiding AI. The frameworks help you use AI with your eyes open.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do I need to understand AI to attend?</h3>
+            <p>No. You need to understand your own work. The workshop assumes familiarity with AI tools but not with the contracts, case law, or ethical frameworks that govern their use in film. That is what we cover.</p>
+          </div>
+          <div class="faq-item">
+            <h3>I am not in a union. Is this still relevant?</h3>
+            <p>Yes. Union contracts set the precedents, but the frameworks apply whether you are union or non-union. Festival policies, copyright implications, and documentation practices affect every filmmaker.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What if I can't make it after I pay?</h3>
+            <p>Full refund up to 48 hours before the workshop. After that, your spot transfers to a future session.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What do I need to bring?</h3>
+            <p>A laptop with a web browser. That is it. We will set up everything else during the session.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is this legal advice?</h3>
+            <p>No. Alex is a practitioner, not a lawyer. The frameworks are built from verified research into union contracts, festival policies, and case law. They help you ask better questions and make informed decisions. They are not a substitute for legal counsel on your specific project.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
+    <!-- Register -->
+    <section id="register" class="bordered bg-white register">
       <div class="container">
-        <h2>Want to talk about AI for your business?</h2>
-        <p class="contact-subtitle">Tell me a little about what you're working on. I'll get back to you.</p>
-        <form action="https://formspree.io/f/xpqodrkv" method="POST" class="contact-form">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required placeholder="Your name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required placeholder="your@email.com">
-            </div>
+        <h2>Reserve Your Seat</h2>
+        <p style="font-size: 1.05rem; color: var(--text); margin-bottom: 1.75rem; line-height: 1.5;">You walk in uncertain about AI in your work. You walk out knowing where the lines are. $175.</p>
+        <form class="register-form" id="register-form" action="https://formsubmit.co/alex@amplifyai.to" method="POST">
+          <input type="hidden" name="_subject" value="May 30 Workshop Registration">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://amplifyai.to">
+          <input type="hidden" name="_template" value="table">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
           </div>
           <div class="form-group">
-            <label for="message">What are you working on?</label>
-            <textarea id="message" name="message" rows="4" placeholder="A few sentences is plenty. What's your business, and what are you curious about with AI?"></textarea>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your email">
           </div>
-          <button type="submit" class="btn btn-primary">Send It</button>
+          <div class="form-group">
+            <label for="role">Your role in filmmaking</label>
+            <select id="role" name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="Writer / Screenwriter">Writer / Screenwriter</option>
+              <option value="Director / Producer">Director / Producer</option>
+              <option value="Composer / Music Supervisor">Composer / Music Supervisor</option>
+              <option value="Post-Production / VFX">Post-Production / VFX</option>
+              <option value="Film Student">Film Student</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Register Now</button>
+          <p class="form-note">Alex will reply within 24 hours with payment details and what to prep.</p>
         </form>
-        <div class="contact-links">
-          <p class="contact-or">Or call/text directly:</p>
+        <div class="contact-block">
+          <span class="contact-label">Prefer to call or text?</span>
           <a href="tel:6197553246">619-755-3246</a>
         </div>
       </div>
@@ -247,9 +687,15 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2026 Amplify AI. San Diego, CA.</p>
+      <p>&copy; 2026 Amplify AI. San Diego, CA. <a href="https://amplifyai.to" style="color: var(--secondary);">amplifyai.to</a></p>
     </div>
   </footer>
+
+  <!-- Fixed bottom CTA bar -->
+  <div class="bottom-cta">
+    <span class="bottom-cta-text">May 30 / Expressive Arts San Diego / $175</span>
+    <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
+  </div>
 
 </body>
 </html>
