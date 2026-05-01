@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Flyer — May 30</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page { size: letter; margin: 0; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: #fff;
+      color: #2a0a0a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .flyer {
+      width: 8.5in;
+      height: 11in;
+      margin: 0 auto;
+      padding: 0.7in 0.85in 0.6in;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #faf5f2;
+      position: relative;
+    }
+
+    .accent-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: #8B2020;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 0.35in;
+      padding-top: 0.1in;
+    }
+
+    .header-label {
+      font-weight: 600;
+      font-size: 10pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8B2020;
+      margin-bottom: 10px;
+    }
+
+    .header-name {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      font-size: 28pt;
+      color: #8B2020;
+      margin-bottom: 8px;
+    }
+
+    .header-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      font-size: 22pt;
+      line-height: 1.2;
+      color: #2a0a0a;
+      max-width: 5.5in;
+      margin: 0 auto;
+    }
+
+    /* Divider */
+    .divider {
+      width: 1.5in;
+      height: 2px;
+      background: #8B2020;
+      margin: 0.3in auto;
+    }
+
+    /* Details */
+    .details {
+      display: flex;
+      justify-content: center;
+      gap: 0.5in;
+      margin-bottom: 0.4in;
+    }
+
+    .detail { text-align: center; }
+
+    .detail-label {
+      font-weight: 700;
+      font-size: 9pt;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #8B2020;
+      margin-bottom: 2px;
+    }
+
+    .detail-value {
+      font-size: 13pt;
+      font-weight: 600;
+      color: #2a0a0a;
+    }
+
+    /* Takeaways */
+    .takeaways {
+      width: 100%;
+      margin-bottom: 0.35in;
+    }
+
+    .section-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      font-size: 15pt;
+      color: #2a0a0a;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .takeaway-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 0.4in;
+      list-style: none;
+    }
+
+    .takeaway-grid li {
+      font-size: 11pt;
+      line-height: 1.4;
+      color: #2a0a0a;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .takeaway-grid li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      background: #8B2020;
+      border-radius: 50%;
+    }
+
+    /* QR + register */
+    .register-section {
+      display: flex;
+      align-items: center;
+      gap: 0.4in;
+      background: #fff;
+      border: 2px solid #f0e4e0;
+      border-radius: 14px;
+      padding: 0.25in 0.35in;
+      margin-bottom: 0.3in;
+    }
+
+    .qr-img {
+      width: 1.8in;
+      height: 1.8in;
+      flex-shrink: 0;
+    }
+
+    .register-text {
+      text-align: left;
+    }
+
+    .register-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      font-size: 16pt;
+      color: #8B2020;
+      margin-bottom: 4px;
+    }
+
+    .register-url {
+      font-weight: 700;
+      font-size: 18pt;
+      color: #2a0a0a;
+      margin-bottom: 6px;
+    }
+
+    .register-note {
+      font-size: 10pt;
+      color: #6a4040;
+      line-height: 1.4;
+    }
+
+    /* Quote */
+    .quote {
+      text-align: center;
+      max-width: 5.5in;
+      margin-bottom: 0.2in;
+    }
+
+    .quote-text {
+      font-style: italic;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #2a0a0a;
+    }
+
+    .quote-cite {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #6a4040;
+      margin-top: 4px;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: auto;
+      width: 100%;
+      padding-top: 0.15in;
+      border-top: 1px solid #f0e4e0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-size: 10pt;
+      color: #6a4040;
+    }
+    .footer-left strong { color: #2a0a0a; }
+
+    .footer-brand {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      font-size: 14pt;
+      color: #2a0a0a;
+    }
+
+    @media print {
+      body { background: none; }
+      .flyer { box-shadow: none; }
+    }
+    @media screen {
+      .flyer { box-shadow: 0 4px 20px rgba(0,0,0,0.15); margin: 20px auto; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="flyer">
+  <div class="accent-bar"></div>
+
+  <div class="header">
+    <div class="header-label">Hands-On AI Workshop for Filmmakers</div>
+    <div class="header-name">The Filmmaker's Framework</div>
+    <div class="header-title">How to Use AI Without Losing Your Rights, Your Credit, or Your Craft</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="details">
+    <div class="detail">
+      <div class="detail-label">When</div>
+      <div class="detail-value">Saturday, May 30</div>
+    </div>
+    <div class="detail">
+      <div class="detail-label">Time</div>
+      <div class="detail-value">10 AM - 2 PM</div>
+    </div>
+    <div class="detail">
+      <div class="detail-label">Where</div>
+      <div class="detail-value">Expressive Arts San Diego</div>
+    </div>
+    <div class="detail">
+      <div class="detail-label">Price</div>
+      <div class="detail-value">$175</div>
+    </div>
+  </div>
+
+  <div class="takeaways">
+    <div class="section-title">What You Walk Away With</div>
+    <ul class="takeaway-grid">
+      <li>A decision framework for every AI tool on every project</li>
+      <li>Hands-on AI skills built around your expertise</li>
+      <li>Documentation that protects your copyright</li>
+      <li>The 3 C's: Consent, Compensation, Credit</li>
+      <li>Protections by role: writers, composers, behind-the-camera</li>
+      <li>Proprietary tools + 14 days free beta access</li>
+    </ul>
+  </div>
+
+  <div class="register-section">
+    <img class="qr-img" src="data:image/png;base64,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" alt="QR code to amplifyai.to">
+    <div class="register-text">
+      <div class="register-title">Register Now</div>
+      <div class="register-url">amplifyai.to</div>
+      <div class="register-note">Scan the QR code or visit the site.<br>30 seats. No technical background needed.</div>
+    </div>
+  </div>
+
+  <div class="quote">
+    <div class="quote-text">"Alex is offering a valuable workshop to help creatives thrive. If you're interested in learning how to have AI assist, not replace, you on your creative journey, Alex is a safe bet."</div>
+    <div class="quote-cite">Heather Hilton, Media Personality &amp; Podcaster</div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      <strong>Alex Guillen</strong> / alex@amplifyai.to / 619-755-3246
+    </div>
+    <div class="footer-brand">Amplify AI</div>
+  </div>
+</div>
+
+</body>
+</html>
