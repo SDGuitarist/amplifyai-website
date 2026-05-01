@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH4JJG7QRY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH4JJG7QRY');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Filmmaker's Framework: AI Ethics Workshop | May 30</title>
 
@@ -717,6 +725,51 @@
     <span class="bottom-cta-text">May 30 / Expressive Arts San Diego / <span class="price-original">$175</span> $125</span>
     <a href="#register" class="btn btn-primary">Reserve Your Seat</a>
   </div>
+
+  <script>
+    // --- Scroll depth tracking ---
+    (function() {
+      var firedDepths = {};
+      function checkScroll() {
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return;
+        var pct = Math.round((window.scrollY / docHeight) * 100);
+        [25, 50, 75].forEach(function(threshold) {
+          if (pct >= threshold && !firedDepths[threshold]) {
+            firedDepths[threshold] = true;
+            if (typeof gtag === 'function') {
+              gtag('event', 'scroll_depth', { depth: threshold + '%' });
+            }
+          }
+        });
+      }
+      window.addEventListener('scroll', checkScroll, { passive: true });
+    })();
+
+    // --- CTA button click tracking ---
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('.btn-primary');
+      if (btn && typeof gtag === 'function') {
+        gtag('event', 'cta_click', {
+          cta_text: btn.textContent.trim(),
+          cta_location: btn.closest('section') ? btn.closest('section').id || 'hero' : 'sticky_bar'
+        });
+      }
+    });
+
+    // --- Form submission tracking ---
+    var form = document.getElementById('register-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submit', {
+            form_name: 'workshop_registration',
+            source: 'filmnet'
+          });
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
