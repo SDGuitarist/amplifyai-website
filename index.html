@@ -158,11 +158,19 @@
     .details-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 1.5rem;
+      gap: 0.75rem;
       margin-bottom: 2rem;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
-    .detail { display: flex; align-items: center; gap: 0.4rem; }
+    .detail {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--white);
+      border: 1px solid var(--surface);
+      border-radius: 100px;
+      padding: 0.45rem 1rem;
+    }
     .detail-label { font-weight: 600; color: var(--text); }
     .detail-value { color: var(--secondary); }
     .hero-cta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
@@ -172,7 +180,6 @@
       color: var(--secondary);
       margin-top: 1.25rem;
       line-height: 1.5;
-      text-align: center;
     }
 
     @media (max-width: 600px) {
@@ -292,6 +299,36 @@
       border-radius: 100px;
     }
 
+    /* --- Testimonial Cards --- */
+    .testimonial-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .testimonial-card {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.75rem 2rem;
+    }
+    .testimonial-card blockquote {
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+    .testimonial-card cite {
+      font-style: normal;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary);
+      display: block;
+      padding-left: 1.25rem;
+    }
+
     blockquote {
       font-style: italic;
       font-size: 1.05rem;
@@ -306,6 +343,44 @@
       font-size: 0.9rem;
       font-weight: 600;
       color: var(--secondary);
+    }
+
+    /* --- About / Bio --- */
+    .bio-card {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 2rem 2rem 1.75rem;
+    }
+    .bio-card p {
+      font-size: clamp(1rem, 1.1vw, 1.1rem);
+      line-height: 1.7;
+      color: var(--secondary);
+      margin-bottom: 0;
+    }
+    .bio-endorsement {
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: 8px;
+      padding: 1.75rem 2rem;
+      margin-top: 1.5rem;
+    }
+    .bio-endorsement blockquote {
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+    .bio-endorsement cite {
+      font-style: normal;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--secondary);
+      display: block;
+      padding-left: 1.25rem;
     }
 
     /* --- FAQ --- */
@@ -585,22 +660,28 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="bordered">
+    <section class="bordered bg-white">
       <div class="container">
         <h2>What Past Attendees Said</h2>
-        <div style="display: grid; gap: 1.5rem; max-width: 600px;">
-          <blockquote>
-            "This AI training course was genuinely one of the most valuable learning experiences. Practical, eye-opening, and immediately applicable. I was so inspired that I actually started making progress on my own project right there in class."
-          </blockquote>
-          <cite>Vitaly Perakh, Writer &amp; Entrepreneur</cite>
-          <blockquote>
-            "I thought it was great and I left inspired to learn more. You're a fun instructor with solid examples. Two thumbs up!"
-          </blockquote>
-          <cite>Jane Hare, Producer (Everon Media)</cite>
-          <blockquote>
-            "The technology is here and advancing and we should use it as another tool in our creative toolbox."
-          </blockquote>
-          <cite>Jacob Dubizhansky, Filmmaker (SD Streaming Film Festival)</cite>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <blockquote>
+              "This AI training course was genuinely one of the most valuable learning experiences. Practical, eye-opening, and immediately applicable. I was so inspired that I actually started making progress on my own project right there in class."
+            </blockquote>
+            <cite>Vitaly Perakh, Writer &amp; Entrepreneur</cite>
+          </div>
+          <div class="testimonial-card">
+            <blockquote>
+              "I thought it was great and I left inspired to learn more. You're a fun instructor with solid examples. Two thumbs up!"
+            </blockquote>
+            <cite>Jane Hare, Producer (Everon Media)</cite>
+          </div>
+          <div class="testimonial-card">
+            <blockquote>
+              "The technology is here and advancing and we should use it as another tool in our creative toolbox."
+            </blockquote>
+            <cite>Jacob Dubizhansky, Filmmaker (SD Streaming Film Festival)</cite>
+          </div>
         </div>
       </div>
     </section>
@@ -614,11 +695,13 @@
     </section>
 
     <!-- About Alex -->
-    <section class="bordered">
+    <section class="bordered bg-white">
       <div class="container">
         <h2>About Alex</h2>
-        <p style="font-size: clamp(1rem, 1.1vw, 1.1rem); line-height: 1.7; color: var(--secondary); max-width: 600px; margin-bottom: 1.5rem;">Berklee-trained composer and writer with 30+ years of performance and 2,500+ events. Co-wrote "A Cut Above," which won multiple awards at the San Diego Streaming Film Festival and 48 Hour Film Project Gala. He started using AI in 2023 to run his own creative business, then turned the conversation happening in his workshops into decision frameworks filmmakers can actually use. 40+ primary sources. Workshop-tested.</p>
-        <div style="margin-bottom: 2rem;">
+        <div class="bio-card">
+          <p>Berklee-trained composer and writer with 30+ years of performance and 2,500+ events. Co-wrote "A Cut Above," which won multiple awards at the San Diego Streaming Film Festival and 48 Hour Film Project Gala. He started using AI in 2023 to run his own creative business, then turned the conversation happening in his workshops into decision frameworks filmmakers can actually use. 40+ primary sources. Workshop-tested.</p>
+        </div>
+        <div class="bio-endorsement">
           <blockquote>
             "Alex is offering a valuable workshop to learn how to navigate using AI as a good tool, to help creatives thrive. If you or a friend is interested in learning more about how to have AI assist (not replace) you on your creative journey, Alex is a safe bet."
           </blockquote>
