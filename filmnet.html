@@ -472,6 +472,53 @@
       color: var(--secondary);
     }
 
+    /* --- Workshop Photo --- */
+    .workshop-photo {
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 2rem;
+      box-shadow: 0 4px 20px rgba(42, 10, 10, 0.1);
+    }
+    .workshop-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .workshop-photo figcaption {
+      font-size: 0.82rem;
+      color: var(--secondary);
+      padding: 0.75rem 1rem;
+      background: var(--white);
+      border-top: 1px solid var(--surface);
+    }
+
+    /* --- Bio with Photo --- */
+    .bio-with-photo {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .bio-photo {
+      flex-shrink: 0;
+      width: 180px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(42, 10, 10, 0.1);
+    }
+    .bio-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .bio-with-photo {
+        flex-direction: column;
+      }
+      .bio-photo {
+        width: 140px;
+      }
+    }
+
     /* --- About / Bio --- */
     .bio-card {
       background: var(--bg);
@@ -836,6 +883,10 @@
           <h3>What Happens in the Room</h3>
           <p>You write a flat prompt and watch what AI gives you. Then you rewrite it with your expertise structured in. Same tool. Completely different output. That moment is when it clicks: AI did not get smarter. You told it who you are. From there, you apply the Three Questions framework to your own project, see a live Writers Room Council demo where AI stress-tests a story, finds the weak points, and challenges you to make it stronger, and leave with a handout kit of templates, checklists, and reference sheets.</p>
         </div>
+        <figure class="workshop-photo" data-aos="fade-up">
+          <img src="images/room-wide-view.jpg" alt="Attendees engaged during an Amplify AI workshop at the San Diego Streaming Film Festival" loading="lazy" width="1200" height="900">
+          <figcaption>SD Streaming Film Festival, April 2026</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -881,7 +932,12 @@
       <div class="container">
         <h2>About Alex</h2>
         <div class="bio-card">
-          <p>Berklee-trained composer and writer with 30+ years of performance and 2,500+ events. Co-wrote "A Cut Above," which won multiple awards at the San Diego Streaming Film Festival and 48 Hour Film Project Gala. He started using AI in 2023 to run his own creative business, then turned the conversation happening in his workshops into decision frameworks filmmakers can actually use. 40+ primary sources. Workshop-tested.</p>
+          <div class="bio-with-photo">
+            <div class="bio-photo">
+              <img src="images/alex-presenting-1.jpg" alt="Alex Guillen presenting at a filmmaking workshop" loading="lazy" width="800" height="1067">
+            </div>
+            <p>Berklee-trained composer and writer with 30+ years of performance and 2,500+ events. Co-wrote "A Cut Above," which won multiple awards at the San Diego Streaming Film Festival and 48 Hour Film Project Gala. He started using AI in 2023 to run his own creative business, then turned the conversation happening in his workshops into decision frameworks filmmakers can actually use. 40+ primary sources. Workshop-tested.</p>
+          </div>
         </div>
         <div class="bio-endorsement" data-aos="fade-up" data-aos-delay="100">
           <blockquote>
