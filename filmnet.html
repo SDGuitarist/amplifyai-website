@@ -20,6 +20,15 @@
   <meta property="og:title" content="AI for Filmmakers: Your Tools, Your Voice, Your Rights | May 30">
   <meta property="og:description" content="Hands-on AI workshop for filmmakers. Build your tools, protect your voice, know your rights. Four hours. Three exercises. Your real project. May 30, Expressive Arts San Diego.">
   <meta property="og:type" content="website">
+  <meta property="og:image" content="https://amplifyai.to/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://amplifyai.to/filmnet.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://amplifyai.to/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,8 +36,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
 
-  <!-- AOS (Animate on Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <!-- AOS (Animate on Scroll) - deferred -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationEvent",
+    "name": "AI for Filmmakers: Your Tools, Your Voice, Your Rights",
+    "description": "Hands-on AI workshop for filmmakers. Build your tools, protect your voice, know your rights. Four hours. Three exercises. Your real project.",
+    "startDate": "2026-05-30T10:00:00-07:00",
+    "endDate": "2026-05-30T14:00:00-07:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Expressive Arts San Diego",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3201 Thorn St",
+        "addressLocality": "San Diego",
+        "addressRegion": "CA",
+        "postalCode": "92104",
+        "addressCountry": "US"
+      }
+    },
+    "organizer": {
+      "@type": "Person",
+      "name": "Alex Guillen",
+      "url": "https://amplifyai.to"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "125.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "url": "https://amplifyai.to/filmnet.html"
+    },
+    "image": "https://amplifyai.to/images/og-image.jpg"
+  }
+  </script>
 
   <style>
     /* --- Reset & Base --- */
@@ -884,7 +932,10 @@
           <p>You write a flat prompt and watch what AI gives you. Then you rewrite it with your expertise structured in. Same tool. Completely different output. That moment is when it clicks: AI did not get smarter. You told it who you are. From there, you apply the Three Questions framework to your own project, see a live Writers Room Council demo where AI stress-tests a story, finds the weak points, and challenges you to make it stronger, and leave with a handout kit of templates, checklists, and reference sheets.</p>
         </div>
         <figure class="workshop-photo" data-aos="fade-up">
-          <img src="images/room-wide-view.jpg" alt="Attendees engaged during an Amplify AI workshop at the San Diego Streaming Film Festival" loading="lazy" width="1200" height="900">
+          <picture>
+            <source srcset="images/room-wide-view.webp" type="image/webp">
+            <img src="images/room-wide-view.jpg" alt="Attendees engaged during an Amplify AI workshop at the San Diego Streaming Film Festival" loading="lazy" width="1320" height="990">
+          </picture>
           <figcaption>SD Streaming Film Festival, April 2026</figcaption>
         </figure>
       </div>
@@ -934,7 +985,10 @@
         <div class="bio-card">
           <div class="bio-with-photo">
             <div class="bio-photo">
-              <img src="images/alex-presenting-1.jpg" alt="Alex Guillen presenting at a filmmaking workshop" loading="lazy" width="800" height="1067">
+              <picture>
+                <source srcset="images/alex-presenting-1.webp" type="image/webp">
+                <img src="images/alex-presenting-1.jpg" alt="Alex Guillen presenting at a filmmaking workshop" loading="lazy" width="1320" height="1760">
+              </picture>
             </div>
             <p>Berklee-trained composer and writer with 30+ years of performance and 2,500+ events. Co-wrote "A Cut Above," which won multiple awards at the San Diego Streaming Film Festival and 48 Hour Film Project Gala. He started using AI in 2023 to run his own creative business, then turned the conversation happening in his workshops into decision frameworks filmmakers can actually use. 40+ primary sources. Workshop-tested.</p>
           </div>
