@@ -60,21 +60,39 @@
     a:hover { color: var(--accent-hover); }
 
     h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; line-height: 1.2; color: var(--text); }
-    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1.5rem; }
+    h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.15rem);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+      position: relative;
+      padding-bottom: 0.85rem;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .register h2::after { left: 50%; transform: translateX(-50%); }
 
     .container { max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
 
-    section { padding: clamp(3rem, 6vw, 5rem) 0; }
+    section { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
 
     /* --- Nav --- */
     .nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(245, 240, 235, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--surface);
-      padding: 0.75rem 1.5rem;
+      background: rgba(250, 245, 242, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(240, 228, 224, 0.8);
+      padding: 0.85rem 1.5rem;
     }
     .nav-inner {
       max-width: 860px;
@@ -92,17 +110,30 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 1.75rem;
     }
     .nav-links a {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 500;
       color: var(--secondary);
+      position: relative;
+      transition: color 0.2s ease;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::after { width: 100%; }
 
     @media (max-width: 600px) {
-      .nav-links { gap: 1rem; }
+      .nav-links { gap: 1.1rem; }
       .nav-links a { font-size: 0.8rem; }
     }
 
@@ -111,56 +142,63 @@
       display: inline-block;
       font-family: var(--font-body);
       font-weight: 600;
-      font-size: 1rem;
-      padding: 0.85rem 2rem;
-      border-radius: 6px;
+      font-size: 1.05rem;
+      padding: 0.95rem 2.25rem;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.1s ease;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
     }
     .btn-primary {
       background: var(--accent);
       color: var(--white);
+      box-shadow: 0 2px 8px rgba(139, 32, 32, 0.25), 0 1px 3px rgba(139, 32, 32, 0.15);
     }
     .btn-primary:hover {
       background: var(--accent-hover);
       color: var(--white);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(139, 32, 32, 0.3), 0 2px 6px rgba(139, 32, 32, 0.2);
     }
 
     /* --- Hero --- */
     .hero {
-      padding: clamp(3rem, 8vw, 5rem) 0;
-      border-bottom: 1px solid var(--surface);
+      padding: clamp(4rem, 10vw, 6.5rem) 0 clamp(3.5rem, 8vw, 5rem);
+      border-bottom: none;
+      background: linear-gradient(175deg, #faf5f2 0%, #f5ebe6 60%, #f0e4e0 100%);
     }
     .hero-label {
       font-family: var(--font-body);
       font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0.75rem;
-      display: block;
+      margin-bottom: 1rem;
+      display: inline-block;
+      background: rgba(139, 32, 32, 0.06);
+      padding: 0.4rem 0.9rem;
+      border-radius: 4px;
     }
     .hero h1 {
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      font-size: clamp(2rem, 4.5vw, 2.85rem);
+      line-height: 1.12;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
     }
     .hero-sub {
-      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
       color: var(--secondary);
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 520px;
     }
     .details-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-      font-size: 0.9rem;
+      gap: 0.6rem;
+      margin-bottom: 2.25rem;
+      font-size: 0.88rem;
     }
     .detail {
       display: flex;
@@ -169,12 +207,21 @@
       background: var(--white);
       border: 1px solid var(--surface);
       border-radius: 100px;
-      padding: 0.45rem 1rem;
+      padding: 0.5rem 1.15rem;
+      box-shadow: 0 1px 3px rgba(42, 10, 10, 0.04);
     }
     .detail-label { font-weight: 600; color: var(--text); }
     .detail-value { color: var(--secondary); }
-    .hero-cta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
-    .hero-cta .seats-note { font-size: 0.9rem; font-weight: 500; color: var(--secondary); }
+    .hero-cta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+    .hero-cta .seats-note {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(139, 32, 32, 0.06);
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
     .hero-value-prop {
       font-size: 0.85rem;
       color: var(--secondary);
@@ -183,17 +230,27 @@
     }
 
     @media (max-width: 600px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      .hero h1 { font-size: 1.85rem; }
       .btn-primary {
         width: 100%;
         text-align: center;
         font-size: 1.1rem;
-        padding: 1rem 2rem;
+        padding: 1.1rem 2rem;
       }
       .hero-cta {
         flex-direction: column;
         align-items: stretch;
         text-align: center;
       }
+      .details-strip { gap: 0.5rem; }
+      .detail { padding: 0.4rem 0.85rem; font-size: 0.82rem; }
+      .persona-card { padding: 1.5rem 1.5rem; }
+      .takeaway-list li { gap: 0.85rem; }
+      .testimonial-card { padding: 1.5rem 1.5rem; }
+      .register-form { padding: 1.5rem 1.25rem 1.25rem; }
+      .faq-item { padding: 1.25rem 1.35rem; }
+      h2 { font-size: 1.5rem; }
     }
 
     /* --- Sections --- */
@@ -213,29 +270,42 @@
     .persona-card {
       background: var(--white);
       border: 1px solid var(--surface);
-      border-radius: 8px;
-      padding: 1.5rem 1.75rem;
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      box-shadow: 0 1px 4px rgba(42, 10, 10, 0.03);
+      border-top: 3px solid var(--accent);
+      transition: box-shadow 0.2s ease, transform 0.15s ease;
     }
-    .persona-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--accent); }
-    .persona-card p { font-size: 0.95rem; color: var(--secondary); line-height: 1.6; }
+    .persona-card:hover {
+      box-shadow: 0 4px 12px rgba(42, 10, 10, 0.06);
+      transform: translateY(-1px);
+    }
+    .persona-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--accent); }
+    .persona-card p { font-size: 0.95rem; color: var(--secondary); line-height: 1.65; }
 
     /* --- Takeaway List --- */
     .takeaway-list {
       list-style: none;
       display: grid;
-      gap: 1.25rem;
+      gap: 1.5rem;
     }
     .takeaway-list li {
       display: flex;
-      gap: 1rem;
+      gap: 1.1rem;
       align-items: flex-start;
       font-size: clamp(1rem, 1.1vw, 1.1rem);
-      line-height: 1.6;
+      line-height: 1.7;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--surface);
+    }
+    .takeaway-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
     .takeaway-num {
       flex-shrink: 0;
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       background: var(--accent);
       color: var(--white);
       border-radius: 50%;
@@ -244,18 +314,20 @@
       justify-content: center;
       font-size: 0.85rem;
       font-weight: 700;
-      margin-top: 0.1rem;
+      margin-top: 0.15rem;
     }
 
     /* --- Example Cards --- */
     .example-card {
-      background: var(--bg);
+      background: linear-gradient(135deg, #faf5f2 0%, #f5ebe6 100%);
       border: 1px solid var(--surface);
-      border-radius: 8px;
-      padding: 1.75rem 2rem;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin-top: 2.5rem;
     }
-    .example-card h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.75rem; }
-    .example-card p { font-size: 0.95rem; color: var(--secondary); line-height: 1.7; }
+    .example-card h3 { font-size: 1.05rem; color: var(--accent); margin-bottom: 0.85rem; font-family: var(--font-heading); }
+    .example-card p { font-size: 0.95rem; color: var(--secondary); line-height: 1.75; }
 
     .example-grid {
       display: grid;
@@ -303,26 +375,31 @@
     .testimonial-grid {
       display: grid;
       gap: 1.5rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
     .testimonial-card {
-      background: var(--bg);
+      background: var(--white);
       border: 1px solid var(--surface);
-      border-radius: 8px;
-      padding: 1.75rem 2rem;
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      box-shadow: 0 2px 8px rgba(42, 10, 10, 0.04), 0 1px 3px rgba(42, 10, 10, 0.03);
+      transition: box-shadow 0.2s ease;
+    }
+    .testimonial-card:hover {
+      box-shadow: 0 4px 16px rgba(42, 10, 10, 0.07), 0 2px 6px rgba(42, 10, 10, 0.04);
     }
     .testimonial-card blockquote {
       font-style: italic;
       font-size: 1.05rem;
-      line-height: 1.7;
+      line-height: 1.75;
       color: var(--text);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
       border-left: 3px solid var(--accent);
       padding-left: 1.25rem;
     }
     .testimonial-card cite {
       font-style: normal;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--secondary);
       display: block;
@@ -349,21 +426,23 @@
     .bio-card {
       background: var(--bg);
       border: 1px solid var(--surface);
-      border-radius: 8px;
-      padding: 2rem 2rem 1.75rem;
+      border-radius: 10px;
+      padding: 2.25rem 2.25rem 2rem;
+      box-shadow: 0 1px 6px rgba(42, 10, 10, 0.03);
     }
     .bio-card p {
-      font-size: clamp(1rem, 1.1vw, 1.1rem);
-      line-height: 1.7;
+      font-size: clamp(1rem, 1.15vw, 1.1rem);
+      line-height: 1.75;
       color: var(--secondary);
       margin-bottom: 0;
     }
     .bio-endorsement {
       background: var(--bg);
       border: 1px solid var(--surface);
-      border-radius: 8px;
-      padding: 1.75rem 2rem;
-      margin-top: 1.5rem;
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin-top: 1.75rem;
+      box-shadow: 0 1px 6px rgba(42, 10, 10, 0.03);
     }
     .bio-endorsement blockquote {
       font-style: italic;
@@ -384,19 +463,24 @@
     }
 
     /* --- FAQ --- */
-    .faq-list { display: grid; gap: 1.25rem; }
+    .faq-list { display: grid; gap: 1rem; }
     .faq-item {
       background: var(--white);
       border: 1px solid var(--surface);
-      border-radius: 8px;
-      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      transition: box-shadow 0.2s ease;
     }
-    .faq-item h3 { font-size: 1rem; margin-bottom: 0.5rem; }
-    .faq-item p { font-size: 0.95rem; color: var(--secondary); line-height: 1.6; }
+    .faq-item:hover {
+      box-shadow: 0 2px 8px rgba(42, 10, 10, 0.04);
+    }
+    .faq-item h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .faq-item p { font-size: 0.95rem; color: var(--secondary); line-height: 1.7; }
 
     /* --- Register --- */
     .register { text-align: center; }
     .register p { margin: 0 auto; }
+    .register h2 { font-size: clamp(1.75rem, 3.5vw, 2.3rem); }
     .register-steps {
       text-align: left;
       max-width: 400px;
@@ -426,54 +510,62 @@
     }
     /* --- Contact Form --- */
     .register-form {
-      max-width: 400px;
+      max-width: 420px;
       margin: 0 auto 2rem;
       text-align: left;
+      background: var(--bg);
+      border: 1px solid var(--surface);
+      border-radius: 12px;
+      padding: 2rem 2rem 1.75rem;
+      box-shadow: 0 2px 12px rgba(42, 10, 10, 0.05), 0 1px 4px rgba(42, 10, 10, 0.03);
     }
     .form-group {
-      margin-bottom: 1rem;
+      margin-bottom: 1.15rem;
     }
     .form-group label {
       display: block;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--text);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
     }
     .form-group input,
     .form-group select {
       width: 100%;
-      padding: 0.7rem 1rem;
+      padding: 0.8rem 1.1rem;
       font-family: var(--font-body);
-      font-size: 0.95rem;
-      border: 1px solid var(--surface);
-      border-radius: 6px;
-      background: var(--bg);
+      font-size: 1rem;
+      border: 1.5px solid #ddd4d0;
+      border-radius: 8px;
+      background: #fff;
       color: var(--text);
-      transition: border-color 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .form-group input:focus,
     .form-group select:focus {
       outline: none;
       border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(139, 32, 32, 0.08);
     }
     .form-submit {
       width: 100%;
       font-family: var(--font-body);
       font-weight: 600;
-      font-size: 1.05rem;
-      padding: 0.85rem 2rem;
-      border-radius: 6px;
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
       background: var(--accent);
       color: var(--white);
-      transition: background 0.2s ease, transform 0.1s ease;
-      margin-top: 0.5rem;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      margin-top: 0.75rem;
+      box-shadow: 0 3px 10px rgba(139, 32, 32, 0.25), 0 1px 4px rgba(139, 32, 32, 0.15);
     }
     .form-submit:hover {
       background: var(--accent-hover);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 16px rgba(139, 32, 32, 0.3), 0 2px 6px rgba(139, 32, 32, 0.2);
     }
     .form-note {
       font-size: 0.8rem;
@@ -498,10 +590,26 @@
     /* --- Footer --- */
     .footer {
       border-top: 1px solid var(--surface);
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
       text-align: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--secondary);
+      letter-spacing: 0.01em;
+    }
+
+    /* --- Why Now (urgency) --- */
+    .why-now-content {
+      background: linear-gradient(135deg, rgba(139, 32, 32, 0.04) 0%, rgba(139, 32, 32, 0.02) 100%);
+      border: 1px solid rgba(139, 32, 32, 0.1);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+    }
+    .why-now-content p {
+      font-size: clamp(1.02rem, 1.15vw, 1.12rem);
+      line-height: 1.75;
+      color: var(--text);
+      max-width: none;
     }
 
     /* --- Bottom CTA Bar --- */
@@ -510,28 +618,31 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(44, 36, 33, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 0.75rem 1.5rem;
+      background: rgba(42, 10, 10, 0.96);
+      backdrop-filter: blur(12px);
+      padding: 0.85rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1.25rem;
+      gap: 1.5rem;
       z-index: 100;
-      border-top: 1px solid rgba(139, 32, 32, 0.3);
+      border-top: 1px solid rgba(139, 32, 32, 0.4);
+      box-shadow: 0 -4px 20px rgba(42, 10, 10, 0.15);
     }
     .bottom-cta-text {
-      color: var(--bg);
+      color: rgba(250, 245, 242, 0.9);
       font-size: 0.9rem;
       font-weight: 500;
+      letter-spacing: 0.01em;
     }
     .bottom-cta .btn-primary {
-      padding: 0.6rem 1.5rem;
-      font-size: 0.85rem;
+      padding: 0.65rem 1.6rem;
+      font-size: 0.88rem;
+      box-shadow: 0 2px 8px rgba(139, 32, 32, 0.4);
     }
     @media (max-width: 480px) {
       .bottom-cta-text { font-size: 0.8rem; }
-      .bottom-cta .btn-primary { padding: 0.5rem 1.25rem; font-size: 0.8rem; }
+      .bottom-cta .btn-primary { padding: 0.55rem 1.25rem; font-size: 0.82rem; }
     }
 
     .footer { padding-bottom: 5rem; }
@@ -557,7 +668,7 @@
     <section class="hero">
       <div class="container">
         <span class="hero-label">Hands-On AI Workshop for Filmmakers / San Diego</span>
-        <p style="font-family: var(--font-heading); font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; color: var(--accent); margin-bottom: 0.5rem;">AI for Filmmakers</p>
+        <p style="font-family: var(--font-heading); font-size: clamp(1.15rem, 2vw, 1.35rem); font-weight: 600; color: var(--accent); margin-bottom: 0.35rem; letter-spacing: 0.01em;">AI for Filmmakers</p>
         <h1>Your Tools, Your Voice, Your Rights</h1>
         <p class="hero-sub">Four hours. You leave with hands-on tools for your workflow, decision frameworks for your rights, and the confidence to use AI on your next project without second-guessing.</p>
         <div class="details-strip">
@@ -585,7 +696,7 @@
     <!-- The Problem -->
     <section class="bordered">
       <div class="container">
-        <p style="font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; color: var(--secondary); max-width: 650px;">AI tools are already showing up in pre-production, writing rooms, score composition, and post. Some filmmakers are using them. Most are guessing about what is safe, what is legal, and what is ethical. The rules differ by role, by union, by festival. And the people behind the camera have far fewer protections than the people in front of it. This workshop gives you the tools to stop guessing and start deciding.</p>
+        <p style="font-size: clamp(1.08rem, 1.25vw, 1.18rem); line-height: 1.8; color: var(--secondary); max-width: 640px; font-weight: 400;">AI tools are already showing up in pre-production, writing rooms, score composition, and post. Some filmmakers are using them. Most are guessing about what is safe, what is legal, and what is ethical. The rules differ by role, by union, by festival. And the people behind the camera have far fewer protections than the people in front of it. This workshop gives you the tools to stop guessing and start deciding.</p>
       </div>
     </section>
 
@@ -690,7 +801,9 @@
     <section class="bordered">
       <div class="container">
         <h2>Why Now</h2>
-        <p style="font-size: clamp(1rem, 1.1vw, 1.1rem); line-height: 1.7; color: var(--secondary); max-width: 600px;">Union contracts are being renegotiated. Festival policies are changing every season. Studios are making AI decisions without waiting for consensus. The filmmakers who build these skills now will be the ones leading the conversation, not reacting to it. Every month you wait is another month of guessing while the rules get written without you.</p>
+        <div class="why-now-content">
+          <p>Union contracts are being renegotiated. Festival policies are changing every season. Studios are making AI decisions without waiting for consensus. The filmmakers who build these skills now will be the ones leading the conversation, not reacting to it. Every month you wait is another month of guessing while the rules get written without you.</p>
+        </div>
       </div>
     </section>
 
