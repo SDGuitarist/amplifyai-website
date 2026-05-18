@@ -1,9 +1,37 @@
 # Amplify AI Website — Handoff
 
-**Date:** 2026-04-14
+**Date:** 2026-05-17
 **Branch:** main
-**Phase:** Compound complete (SEO Phase 1 shipped + reviewed + documented)
-**Last session:** Review fixes applied + Compound phase (solution doc + learnings propagation)
+**Phase:** Work complete (Safari mobile engagement fix)
+**Last session:** Removed AOS dependency, fixed hidden-content failure, tightened mobile hero CTA
+
+---
+
+## What Was Done (May 17) -- Safari Mobile Engagement Fix
+
+**Root cause:** AOS (Animate On Scroll) uses a fail-hidden pattern: CSS sets `opacity: 0` on all `[data-aos]` elements, then JS reveals them. If AOS JS fails to load for any reason (CDN outage, content blockers, in-app browsers, slow networks), all content below the hero is permanently invisible -- including the #register form. No specific browser mechanism was confirmed as the trigger; the fail-hidden pattern itself is the bug.
+
+**Fix applied:**
+1. Removed all 17 `data-aos` and `data-aos-delay` attributes from index.html
+2. Removed AOS CSS link (unpkg.com/aos@2.3.1/dist/aos.css)
+3. Removed AOS JS script and AOS.init() call
+4. Compressed mobile hero for iPhone SE (375x667) with Safari chrome: hid hero-label/eyebrow/value-prop on mobile, tightened nav/hero/details-strip spacing, reduced button size
+5. Verified with Playwright at iPhone SE viewport: CTA at 459px, bottom bar at 483px, 24px clearance
+6. Fixed two broken HTML tags (missing closing `>`) caught during self-review
+
+**What was NOT changed:** GA4 tracking, form action/hidden fields, all visible content/copy on desktop, visual design, bottom sticky CTA bar, nav behavior.
+
+**Verification:**
+```bash
+grep -c 'data-aos' index.html    # returns 0
+grep -c 'unpkg' index.html       # returns 0
+grep -c 'gtag' index.html        # returns 11 (5 config + 6 event tracking)
+```
+
+**Pre-campaign checklist:** Test in Safari, Instagram in-app browser, and with JS disabled. See solution doc for full verification steps.
+
+**Plan doc:** `docs/plans/2026-05-17-safari-mobile-engagement-fix.md`
+**Solution doc:** `docs/solutions/2026-05-17-aos-cdn-hidden-content-failure.md`
 
 ---
 
