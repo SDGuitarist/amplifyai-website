@@ -22,6 +22,12 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1505523111107753');
   fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_name: 'May 30 Workshop Landing Page',
+    content_category: 'Workshop',
+    value: 99.00,
+    currency: 'USD'
+  });
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1505523111107753&ev=PageView&noscript=1"
@@ -1059,7 +1065,7 @@
         <p style="font-size: 1.05rem; color: var(--text); margin-bottom: 0.75rem; line-height: 1.5;">You walk in with questions about AI in your work. You walk out with the tools to answer them on every project. <span class="price-original">$175</span> $99.</p>
         <p style="font-size: 0.95rem; color: var(--secondary); margin-bottom: 1.75rem; line-height: 1.5;">If you've been wondering whether this applies to your work, that's the signal it does.</p>
         <div class="register-form" style="text-align: center;">
-          <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NCSTBBVA3UDXWGI7LNOFXT2Y?src=sheet" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.15rem 2.5rem; display: inline-block;">Register Now — $99</a>
+          <a href="https://checkout.square.site/merchant/N34QM28N0MHKJ/checkout/NCSTBBVA3UDXWGI7LNOFXT2Y?src=sheet" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.15rem 2.5rem; display: inline-block;" onclick="fbq('track', 'Lead', {content_name: 'May 30 Workshop Registration Click', value: 99.00, currency: 'USD'});">Register Now — $99</a>
           <p class="form-note">Secure checkout powered by Square.</p>
         </div>
         <div class="contact-block">
