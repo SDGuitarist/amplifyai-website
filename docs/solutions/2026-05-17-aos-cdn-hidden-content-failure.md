@@ -104,8 +104,41 @@ conversion-critical content. If you must animate, either:
 - Self-host the library with a guard: `if (window.AOS) AOS.init(); else /* ensure visible */`
 - Never put `data-aos` on forms, CTAs, or any element the user needs to see to convert
 
+## May 21, 2026: Same Bug, Different Files
+
+**The May 17 fix only removed AOS from index.html.** filmnet.html and sdifn.html were missed. This went unnoticed for 4 days because:
+
+1. The May 17 fix was scoped to index.html specifically
+2. No one ran the verification grep on the other landing pages
+3. filmnet.html is the page linked in all FilmNet outreach (401-person email list)
+
+**Discovery:** Spec flow analysis agent flagged it while reviewing the May 30 workshop validation plan. The agent checked the actual file on disk and found AOS still present.
+
+**Impact:** Message 2 (going to 401 FilmNet members) was about to send people to filmnet.html with the same CDN vulnerability that broke registration for 3 weeks. If unpkg.com hiccupped or any recipient's content blocker fired, the registration form would be invisible again.
+
+**Fix (commit `0307836`, May 21):** Same treatment as index.html. Removed AOS CSS, JS, init, and all data-aos attributes from both filmnet.html and sdifn.html.
+
+**Lesson:** When fixing a pattern-level bug, grep ALL files in the project, not just the one that was reported. The verification checklist above says `grep -c 'data-aos' index.html` but should say:
+
+```bash
+# Check ALL HTML files, not just index.html
+grep -rc 'data-aos' *.html        # must be 0 across all files
+grep -rc 'unpkg\|cdnjs\|jsdelivr' *.html  # check for new CDN deps
+```
+
+**Updated verification checklist item:**
+```bash
+# Before any outreach or ad campaign
+for f in *.html; do
+  count=$(grep -c 'data-aos' "$f" 2>/dev/null || echo 0)
+  if [ "$count" -gt 0 ]; then echo "FAIL: $f has $count AOS attributes"; fi
+done
+```
+
 ## Related
 
 - WebKit Tracking Prevention: https://webkit.org/tracking-prevention/
 - GA4 enhanced measurement: https://support.google.com/analytics/answer/9216061
 - Plan doc: `docs/plans/2026-05-17-safari-mobile-engagement-fix.md`
+- May 21 fix commit: `0307836` (filmnet.html + sdifn.html)
+- Validation plan: `~/Projects/docs/plans/2026-05-21-feat-may30-workshop-validation-plan.md`
