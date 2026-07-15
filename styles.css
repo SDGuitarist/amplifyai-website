@@ -174,12 +174,20 @@ section {
 
 /* Mobile nav */
 @media (max-width: 767px) {
+  .nav-inner {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+
   .nav-links {
-    gap: 1.25rem;
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.35rem;
   }
 
   .nav-links a {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
   }
 
   .nav-social {
