@@ -1,9 +1,31 @@
 # Amplify AI Website — Handoff
 
-**Date:** 2026-05-17
-**Branch:** main
-**Phase:** Work complete (Safari mobile engagement fix)
-**Last session:** Removed AOS dependency, fixed hidden-content failure, tightened mobile hero CTA
+**Date:** 2026-07-16
+**Branch:** `diagnostic-fixes` (8 commits, NOT yet pushed/merged to main)
+**Phase:** Work — full site diagnostic + fixes; branch pending review/merge
+**Last session:** Ran a full multi-angle diagnostic (a11y, SEO, performance, HTML/links, consistency/tracking) and fixed the findings across 8 commits
+
+---
+
+## What Was Done (July 16) — Full Site Diagnostic + Fixes
+
+Ran a full diagnostic via 5 parallel auditors + live browser testing. Root theme: the "resource hub" rebuild was a half-finished migration (new pages `index`/`resources`/`human-led-ai` use a `home-*` system; old pages `about`/`blog`/blog posts/`dual-literacy`/`hospitality` use the older `.nav`/`.footer` template). Fixes on branch `diagnostic-fixes`:
+
+1. **Analytics** — added GA4 (`G-FH4JJG7QRY`) to `resources.html` + `human-led-ai.html` (were untracked)
+2. **Dead nav links** — repointed `/#services` (removed in rebuild) → `/#work` and Workshops → `/#workshops` on 7 pages
+3. **Past-event pages** — `may30`/`filmnet`/`sdifn` → `noindex` redirect stubs to homepage; originals preserved in `_archived/`. Also killed the SEO duplicate-content issue. Stale `index-consulting-backup.html` moved to `_archived/`
+4. **A11y structure** — `<main id="main">` + skip-links across all content pages (3 blog posts, `dual-literacy`, then `about`/`blog`/`hospitality`)
+5. **Performance** — homepage: async (non-blocking) fonts, swapped mis-encoded WebP→lighter JPEG, lazy-load below-fold images
+6. **Contrast** — darkened `--accent`/`--secondary`/`--accent-hover` to meet WCAG AA (3.4:1 → 4.6:1); same warm hue family
+7. **Footer unification** — one canonical `home-footer` (with LinkedIn/Instagram) on all 9 content pages. Caught+fixed a regression: `home-footer` used `--home-*` vars scoped to `.home-v2`/`.program-page`, so it was invisible on old pages → added CSS fallback values
+8. **SEO/content polish** — shortened 89-char blog title; `noindex` + `<h1>` on `flyer-may30.html`; cleaned email placeholder
+
+**Current tracking reality (supersedes the May 17 "11 gtag" note below):** rebuilt `index.html` has 7 gtag refs + 2 custom events (`cta_click`, `form_submit`); Meta Pixel is on `index` + the (now-redirected) landing pages only.
+
+**Deferred / not done:**
+- **Nav unification** — the homepage nav uses same-page anchors so it can't be copy-pasted to content pages; needs a direction decision. Candidate: adopt the portable content-page variant (`page-nav-links`) already on `resources`/`human-led-ai` as the canonical nav.
+- Possible pre-existing bug: line ~1428 `.program-page .home-footer { display:none }` may hide the footer on `resources`/`human-led-ai` at mobile.
+- Intentionally skipped as low-value: favicon path style, `twitter:title`, unescaped `&` in font URLs, internal-link style. Bigger task: re-encode images to proper WebP.
 
 ---
 
