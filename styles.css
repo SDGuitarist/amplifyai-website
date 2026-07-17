@@ -17,6 +17,18 @@
   --secondary: #6E5A42;
   --surface: #E8DDD3;
   --white: #FEFCFA;
+  /* home-* system tokens promoted to :root so home-nav/home-footer render on any page */
+  --home-paper: #f4efe7;
+  --home-cream: #fbf8f2;
+  --home-ink: #241c19;
+  --home-muted: #6d5e56;
+  --home-red: #8d2f2b;
+  --home-red-dark: #67201e;
+  --home-copper: #bd754a;
+  --home-line: rgba(36, 28, 25, 0.16);
+  --home-night: #211b1a;
+  --home-lime: #d5da77;
+  --home-shell: 1180px;
   --font-heading: 'Fraunces', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
   --content-width: 780px;
