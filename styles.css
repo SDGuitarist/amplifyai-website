@@ -1231,7 +1231,7 @@ section {
 .home-contact-form .home-btn { justify-self: start; margin-top: 1.5rem; border: 0; cursor: pointer; }
 .honeypot { position: absolute !important; left: -10000px !important; }
 
-.home-footer { padding: 3rem 0; color: var(--home-cream); background: var(--home-night); }
+.home-footer { padding: 3rem 0; color: var(--home-cream, #fbf8f2); background: var(--home-night, #211b1a); }
 .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 2.5rem; align-items: center; }
 .footer-grid > div:first-child { display: flex; flex-direction: column; gap: .3rem; }
 .footer-grid strong { font-family: var(--font-heading); font-size: 1.2rem; }
@@ -1239,7 +1239,7 @@ section {
 .footer-grid p { grid-column: 1/-1; margin: 0; }
 .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1.5rem; }
 .footer-links a { color: rgba(251,248,242,.72); font-size: .78rem; font-weight: 600; }
-.footer-links a:hover { color: var(--home-lime); }
+.footer-links a:hover { color: var(--home-lime, #d5da77); }
 
 @media (prefers-reduced-motion: reduce) {
   .home-v2 *, .home-v2 *::before, .home-v2 *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
