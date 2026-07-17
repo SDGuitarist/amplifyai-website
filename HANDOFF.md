@@ -1,9 +1,9 @@
 # Amplify AI Website — Handoff
 
 **Date:** 2026-07-16
-**Branch:** `diagnostic-fixes` (8 commits, NOT yet pushed/merged to main)
-**Phase:** Work — full site diagnostic + fixes; branch pending review/merge
-**Last session:** Ran a full multi-angle diagnostic (a11y, SEO, performance, HTML/links, consistency/tracking) and fixed the findings across 8 commits
+**Branch:** `main` (all work merged + pushed live to amplifyai.to)
+**Phase:** Work complete — full site diagnostic + fixes + nav unification, shipped
+**Last session:** Ran a full multi-angle diagnostic (a11y, SEO, performance, HTML/links, consistency/tracking), fixed the findings across 8 commits, then unified the site nav (2 more commits). All 11 commits merged to main and deployed.
 
 ---
 
@@ -22,10 +22,11 @@ Ran a full diagnostic via 5 parallel auditors + live browser testing. Root theme
 
 **Current tracking reality (supersedes the May 17 "11 gtag" note below):** rebuilt `index.html` has 7 gtag refs + 2 custom events (`cta_click`, `form_submit`); Meta Pixel is on `index` + the (now-redirected) landing pages only.
 
-**Deferred / not done:**
-- **Nav unification** — the homepage nav uses same-page anchors so it can't be copy-pasted to content pages; needs a direction decision. Candidate: adopt the portable content-page variant (`page-nav-links`) already on `resources`/`human-led-ai` as the canonical nav.
-- Possible pre-existing bug: line ~1428 `.program-page .home-footer { display:none }` may hide the footer on `resources`/`human-led-ai` at mobile.
-- Intentionally skipped as low-value: favicon path style, `twitter:title`, unescaped `&` in font URLs, internal-link style. Bigger task: re-encode images to proper WebP.
+**Nav unification — DONE (9th–11th commits):** All 9 non-home content pages now share one canonical `home-nav` (wordmark + hamburger + Work/Workshops/Resources/Writing/About + "Start a conversation" CTA, absolute links, toggle JS). Old `.nav` pages swapped; `resources`/`human-led-ai` upgraded from the minimal `page-nav-links` variant. `--home-*` CSS vars promoted to `:root` so `home-*` components render anywhere. Social links live in the footer, not the nav. Homepage remains the reference design. Verified desktop + mobile hamburger, no console errors.
+
+**Correction to an earlier note:** the `.program-page .home-nav, .home-footer { display:none }` rule is inside `@media print` — it hides chrome when *printing*, NOT on mobile. Not a bug.
+
+**Intentionally skipped as low-value:** favicon path style, `twitter:title`, unescaped `&` in font URLs, internal-link style. Bigger task remaining: re-encode images to proper WebP (would beat the current JPEGs).
 
 ---
 
