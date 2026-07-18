@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH4JJG7QRY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH4JJG7QRY');
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1505523111107753');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1505523111107753&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where Are You on the AI Adoption Ladder? | Amplify AI</title>
+
+  <!-- SEO -->
+  <meta name="description" content="A free 2-minute check for small business owners and creative professionals. Find out where you are on the AI adoption ladder and the one thing standing between you and the next step.">
+  <link rel="canonical" href="https://amplifyai.to/ladder.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Where Are You on the AI Adoption Ladder?">
+  <meta property="og:description" content="A free 2-minute check. Find out where you are on the AI adoption ladder and the one bottleneck standing between you and the next step.">
+  <meta property="og:image" content="https://amplifyai.to/images/og-image.jpg">
+  <meta property="og:url" content="https://amplifyai.to/ladder.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Where Are You on the AI Adoption Ladder?">
+  <meta name="twitter:description" content="A free 2-minute check for small business owners and creative professionals.">
+  <meta name="twitter:image" content="https://amplifyai.to/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./styles.css">
+
+  <!-- Page-specific styles (scoped with .ladder- prefix) -->
+  <style>
+    .ladder-intro { max-width: var(--content-width); }
+    .ladder-intro p { font-size: clamp(1.05rem, 1.2vw, 1.15rem); line-height: 1.7; }
+
+    .ladder-form { max-width: var(--content-width); margin-top: 2.5rem; }
+    .ladder-q { background: var(--white); border: 1px solid var(--home-line); padding: 1.5rem 1.5rem 1.25rem; margin-bottom: 1.5rem; }
+    .ladder-q legend { font-family: var(--font-heading); font-weight: 600; font-size: 1.15rem; line-height: 1.4; padding: 0; margin-bottom: 1rem; color: var(--text); }
+    .ladder-q .ladder-hint { font-family: var(--font-body); font-weight: 400; font-size: 0.9rem; color: var(--home-muted); display: block; margin-top: 0.25rem; }
+    .ladder-opt { display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.7rem 0.85rem; margin-bottom: 0.5rem; border: 1px solid var(--home-line); cursor: pointer; transition: background 140ms ease, border-color 140ms ease; }
+    .ladder-opt:last-child { margin-bottom: 0; }
+    .ladder-opt:hover { background: var(--surface); }
+    .ladder-opt input { margin-top: 0.25rem; accent-color: var(--accent); flex-shrink: 0; }
+    .ladder-opt span { line-height: 1.5; }
+    .ladder-opt:has(input:checked) { background: var(--surface); border-color: var(--accent); }
+
+    .ladder-error { color: var(--home-red); font-weight: 600; margin: 0.5rem 0 1rem; display: none; }
+    .ladder-error.is-visible { display: block; }
+
+    /* Result */
+    .ladder-result { display: none; scroll-margin-top: 90px; }
+    .ladder-result.is-visible { display: block; }
+    .ladder-result-card { background: var(--white); border: 1px solid var(--accent); box-shadow: 6px 6px 0 var(--surface); padding: 2rem; max-width: var(--content-width); }
+    .ladder-badge { display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); background: var(--accent); padding: 0.35rem 0.75rem; margin-bottom: 1rem; }
+    .ladder-result-card h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 1rem; }
+    .ladder-result-card p { font-size: 1.05rem; line-height: 1.7; }
+    .ladder-bottleneck { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1.5rem 0; }
+    .ladder-bottleneck strong { color: var(--accent); }
+
+    /* Email capture */
+    .ladder-capture { background: var(--surface); padding: 1.75rem; margin-top: 1.5rem; max-width: var(--content-width); }
+    .ladder-capture h4 { font-family: var(--font-heading); font-size: 1.2rem; margin: 0 0 0.5rem; }
+    .ladder-capture p { font-size: 0.98rem; line-height: 1.6; margin: 0 0 1rem; color: var(--secondary); }
+    .ladder-capture-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    .ladder-capture input[type="email"] { flex: 1 1 240px; min-height: 48px; padding: 0.7rem 0.9rem; border: 1px solid var(--home-line); font-family: var(--font-body); font-size: 1rem; background: var(--white); color: var(--text); }
+    .ladder-capture input[type="email"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .ladder-capture-msg { margin-top: 0.85rem; font-weight: 600; }
+    .ladder-capture-msg.ok { color: var(--accent); }
+    .ladder-capture-msg.err { color: var(--home-red); }
+
+    .ladder-restart { background: none; border: 0; color: var(--secondary); text-decoration: underline; cursor: pointer; font-family: var(--font-body); font-size: 0.95rem; margin-top: 1.5rem; padding: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV: full-site -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="home-nav" aria-label="Main navigation">
+    <div class="home-nav-inner">
+      <a class="home-wordmark" href="/">
+        <span class="wordmark-mark" aria-hidden="true">A</span>
+        <span>Amplify AI</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="sr-only">Open menu</span>
+        <span></span><span></span>
+      </button>
+      <div class="home-menu" id="site-menu">
+        <a href="/#work">Work</a>
+        <a href="/#workshops">Workshops</a>
+        <a href="resources.html">Resources</a>
+        <a href="blog.html">Writing</a>
+        <a href="about.html">About</a>
+        <a class="nav-cta" href="/#contact">Start a conversation</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="landing-hero">
+      <div class="container">
+        <div class="ladder-intro">
+          <h1 class="landing-hero-headline">Where are you on the AI adoption ladder?</h1>
+          <p class="landing-hero-sub">Big companies have a map for rolling out AI. Small businesses don't, so most owners either avoid it or poke at it and give up. This two-minute check tells you exactly where you are and the one thing standing between you and the next step.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="landing-section">
+      <div class="container">
+
+        <form class="ladder-form" id="ladder-form" novalidate>
+
+          <fieldset class="ladder-q">
+            <legend>1. How often does AI actually touch your work?</legend>
+            <label class="ladder-opt"><input type="radio" name="q1" value="0"><span>Almost never. I've heard the hype but it's not part of my day.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q1" value="1"><span>Now and then, for a quick task like drafting an email or a caption.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q1" value="2"><span>Most days. It's a normal part of how I get things done.</span></label>
+          </fieldset>
+
+          <fieldset class="ladder-q">
+            <legend>2. When AI gives you something back, what do you do with it?</legend>
+            <label class="ladder-opt"><input type="radio" name="q2" value="0"><span>I don't really use it, or I don't trust it enough to try.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q2" value="1"><span>I read every word and fix it myself before I'd ever use it.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q2" value="2"><span>I've learned what it's good at, so I check the important parts and move on.</span></label>
+          </fieldset>
+
+          <fieldset class="ladder-q">
+            <legend>3. How much are you running at once?</legend>
+            <label class="ladder-opt"><input type="radio" name="q3" value="0"><span>Nothing yet.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q3" value="1"><span>One thing at a time. I start it, wait, and watch it finish.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q3" value="2"><span>A few things at once, or the same task across a bunch of items.</span></label>
+          </fieldset>
+
+          <fieldset class="ladder-q">
+            <legend>4. Does any work happen without you sitting there?</legend>
+            <label class="ladder-opt"><input type="radio" name="q4" value="0"><span>No. If I'm not doing it, it's not happening.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q4" value="1"><span>A little, but only stuff I set up by hand each time.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q4" value="2"><span>Yes. Some things run in the background and only pull me in when they need a decision.</span></label>
+          </fieldset>
+
+          <fieldset class="ladder-q">
+            <legend>5. What's the one thing most in your way right now?
+              <span class="ladder-hint">This one isn't scored. It just helps point you at the right next step.</span>
+            </legend>
+            <label class="ladder-opt"><input type="radio" name="q5" value="I don't know where to start."><span>I don't know where to start.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q5" value="I don't trust the output enough to rely on it."><span>I don't trust the output enough to rely on it.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q5" value="I'm spending more time managing AI than it saves me."><span>I'm spending more time managing AI than it saves me.</span></label>
+            <label class="ladder-opt"><input type="radio" name="q5" value="I know what I want but can't build the system to do it."><span>I know what I want but can't build the system to do it.</span></label>
+          </fieldset>
+
+          <p class="ladder-error" id="ladder-error">Please answer questions 1 through 4 so we can place you.</p>
+
+          <button type="submit" class="btn btn-primary">See my result</button>
+        </form>
+
+        <!-- Result -->
+        <div class="ladder-result" id="ladder-result" aria-live="polite" tabindex="-1">
+          <div class="ladder-result-card">
+            <span class="ladder-badge" id="ladder-badge">Your result</span>
+            <h3 id="ladder-title">&nbsp;</h3>
+            <p id="ladder-body">&nbsp;</p>
+            <div class="ladder-bottleneck">
+              <p id="ladder-bottleneck">&nbsp;</p>
+            </div>
+            <p id="ladder-next">&nbsp;</p>
+            <a href="/#contact" class="btn btn-primary" id="ladder-cta" style="margin-top: 0.5rem;">Start a conversation</a>
+          </div>
+
+          <!-- v2: email capture -->
+          <div class="ladder-capture">
+            <h4>Want your result and a short next-step plan in your inbox?</h4>
+            <p>I'll send a plain-English breakdown of your step and the two or three moves that matter most for where you are. No spam, no drip sequence.</p>
+            <form id="ladder-capture-form">
+              <div class="ladder-capture-row">
+                <input type="email" name="email" placeholder="you@example.com" aria-label="Your email address" required>
+                <button type="submit" class="btn btn-primary">Send it to me</button>
+              </div>
+              <!-- hidden context so you know who landed where -->
+              <input type="hidden" name="result_step" id="capture-step">
+              <input type="hidden" name="score" id="capture-score">
+              <input type="hidden" name="biggest_blocker" id="capture-blocker">
+              <input type="hidden" name="_subject" value="New AI Ladder quiz result">
+              <p class="ladder-capture-msg" id="ladder-capture-msg" role="status"></p>
+            </form>
+          </div>
+
+          <button type="button" class="ladder-restart" id="ladder-restart">Start over</button>
+        </div>
+
+        <p style="max-width: var(--content-width); margin-top: 2.5rem; color: var(--secondary); font-style: italic; line-height: 1.7;">No matter your score, the pattern is the same: the next step isn't a new app, it's finding your next bottleneck and clearing it. That's the work I do with clients.</p>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="landing-register">
+      <div class="container">
+        <h2>Not sure what your result means for you?</h2>
+        <p class="landing-register-subtitle">Book a short conversation and we'll talk through your step and the one move that clears your bottleneck.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="/#workshops" class="btn btn-outline">See the workshops</a>
+          <a href="/#contact" class="btn btn-primary">Book a consultation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="home-footer">
+    <div class="home-shell footer-grid">
+      <div><strong>Amplify AI</strong><span>Human-led AI for creative work.</span></div>
+      <div class="footer-links">
+        <a href="blog.html">Writing</a>
+        <a href="about.html">About</a>
+        <a href="https://www.linkedin.com/in/alexguillenmusic" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.instagram.com/alexguillenmusic" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <p>© 2026 Amplify AI · San Diego, CA</p>
+    </div>
+  </footer>
+
+  <script>
+    // --- Mobile nav (same behavior as the rest of the site) ---
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.home-menu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!open));
+        navMenu.classList.toggle('is-open', !open);
+      });
+      navMenu.addEventListener('click', (event) => {
+        if (event.target.closest('a')) {
+          navToggle.setAttribute('aria-expanded', 'false');
+          navMenu.classList.remove('is-open');
+        }
+      });
+    }
+
+    // --- Quiz logic ---
+    // v2 lead capture: paste your Formspree form ID here (formspree.io -> New form).
+    // Until you do, the email box tells the visitor it isn't wired up instead of failing silently.
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+    const RESULTS = {
+      curious: {
+        badge: 'Step 1 of 3',
+        title: "You're Curious",
+        body: "You're at the starting line, which is where most owners are. There's no system yet, and that's fine. The whole industry calls this the gate, and the only thing that gets you through it is one real win you can see with your own eyes.",
+        bottleneck: "Your bottleneck: knowing where to start.",
+        next: "Your next step: the workshop. You'll walk out with your first working win, not a pile of theory.",
+        ctaText: "See the next workshop",
+        ctaHref: "/#workshops"
+      },
+      dabbler: {
+        badge: 'Step 2 of 3',
+        title: "You're a Dabbler",
+        body: "You've got a foot in the door. AI helps here and there, but it's all by hand, one task at a time, and you're checking everything. That's normal. It's also where the ceiling starts, because your own attention becomes the limit.",
+        bottleneck: "Your bottleneck: trust and time. You're doing all the driving.",
+        next: "Your next step: an audit. I look at how you actually work and map the two or three places AI can carry real weight, so you stop babysitting it.",
+        ctaText: "Ask about an audit",
+        ctaHref: "/#contact"
+      },
+      power: {
+        badge: 'Step 3 of 3',
+        title: "You're a Power User hitting a ceiling",
+        body: "You're further than most businesses your size. You trust the output, you run more than one thing at a time, and some work already runs without you. The next jump isn't more tools. It's building systems that run in the background so you can focus on the work only you can do.",
+        bottleneck: "Your bottleneck: you're still the bottleneck. Everything routes through you.",
+        next: "Your next step: an implementation sprint. We build the systems that take whole jobs off your plate, the kind of thing a big company would put a team on.",
+        ctaText: "Ask about a sprint",
+        ctaHref: "/#contact"
+      }
+    };
+
+    function bucketFor(score) {
+      if (score <= 2) return 'curious';
+      if (score <= 5) return 'dabbler';
+      return 'power';
+    }
+
+    const form = document.getElementById('ladder-form');
+    const errorEl = document.getElementById('ladder-error');
+    const resultEl = document.getElementById('ladder-result');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const scored = ['q1', 'q2', 'q3', 'q4'];
+      let score = 0;
+      let missing = false;
+      scored.forEach((name) => {
+        const picked = form.querySelector('input[name="' + name + '"]:checked');
+        if (!picked) { missing = true; } else { score += Number(picked.value); }
+      });
+
+      if (missing) {
+        errorEl.classList.add('is-visible');
+        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      errorEl.classList.remove('is-visible');
+
+      const blockerEl = form.querySelector('input[name="q5"]:checked');
+      const blocker = blockerEl ? blockerEl.value : '(not answered)';
+      const key = bucketFor(score);
+      const r = RESULTS[key];
+
+      // Fill result
+      document.getElementById('ladder-badge').textContent = r.badge;
+      document.getElementById('ladder-title').textContent = r.title;
+      document.getElementById('ladder-body').textContent = r.body;
+      document.getElementById('ladder-bottleneck').textContent = r.bottleneck;
+      document.getElementById('ladder-next').textContent = r.next;
+      const cta = document.getElementById('ladder-cta');
+      cta.textContent = r.ctaText;
+      cta.setAttribute('href', r.ctaHref);
+
+      // Stash context for the email capture
+      document.getElementById('capture-step').value = r.title + ' (score ' + score + ')';
+      document.getElementById('capture-score').value = String(score);
+      document.getElementById('capture-blocker').value = blocker;
+
+      // Analytics (v1): fire on both GA and the Meta Pixel
+      if (typeof gtag === 'function') {
+        gtag('event', 'ladder_result', { step: key, score: score, blocker: blocker });
+      }
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', 'LadderResult', { step: key, score: score });
+      }
+
+      resultEl.classList.add('is-visible');
+      resultEl.focus();
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // --- Email capture (v2) ---
+    const captureForm = document.getElementById('ladder-capture-form');
+    const captureMsg = document.getElementById('ladder-capture-msg');
+
+    captureForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      captureMsg.className = 'ladder-capture-msg';
+      captureMsg.textContent = '';
+
+      if (FORMSPREE_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) {
+        captureMsg.textContent = "Email capture isn't wired up yet. (Add your Formspree ID.)";
+        captureMsg.classList.add('err');
+        return;
+      }
+
+      const data = new FormData(captureForm);
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          captureForm.reset();
+          captureMsg.textContent = "Got it. Check your inbox shortly.";
+          captureMsg.classList.add('ok');
+          if (typeof gtag === 'function') { gtag('event', 'ladder_lead', { step: document.getElementById('capture-step').value }); }
+          if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+        } else {
+          captureMsg.textContent = "Something went wrong. Please try again.";
+          captureMsg.classList.add('err');
+        }
+      } catch (err) {
+        captureMsg.textContent = "Something went wrong. Please try again.";
+        captureMsg.classList.add('err');
+      }
+    });
+
+    // --- Start over ---
+    document.getElementById('ladder-restart').addEventListener('click', () => {
+      form.reset();
+      resultEl.classList.remove('is-visible');
+      captureMsg.textContent = '';
+      captureMsg.className = 'ladder-capture-msg';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
