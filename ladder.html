@@ -81,24 +81,25 @@
     .ladder-result.is-visible { display: block; }
     .ladder-result-card { background: var(--white); border: 1px solid var(--accent); box-shadow: 6px 6px 0 var(--surface); padding: 2rem; max-width: var(--content-width); }
     .ladder-badge { display: inline-block; font-family: var(--font-body); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); background: var(--accent); padding: 0.35rem 0.75rem; margin-bottom: 1rem; }
-    .ladder-result-card h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 1rem; }
+    .ladder-result-card h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 1rem; }
     .ladder-result-card p { font-size: 1.05rem; line-height: 1.7; }
     .ladder-bottleneck { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1.5rem 0; }
     .ladder-bottleneck strong { color: var(--accent); }
 
     /* Email capture */
     .ladder-capture { background: var(--surface); padding: 1.75rem; margin-top: 1.5rem; max-width: var(--content-width); }
-    .ladder-capture h4 { font-family: var(--font-heading); font-size: 1.2rem; margin: 0 0 0.5rem; }
+    .ladder-capture h3 { font-family: var(--font-heading); font-size: 1.2rem; margin: 0 0 0.5rem; }
     .ladder-capture p { font-size: 0.98rem; line-height: 1.6; margin: 0 0 1rem; color: var(--secondary); }
     .ladder-capture-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
     .ladder-capture input[type="email"] { flex: 1 1 240px; min-height: 48px; padding: 0.7rem 0.9rem; border: 1px solid var(--home-line); font-family: var(--font-body); font-size: 1rem; background: var(--white); color: var(--text); }
     .ladder-capture input[type="email"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
     .ladder-capture-msg { margin-top: 0.85rem; font-weight: 600; }
-    .ladder-capture-msg.ok { color: var(--accent); }
+    .ladder-capture-msg.ok { color: var(--accent-hover); }
     .ladder-capture-msg.err { color: var(--home-red); }
 
     .ladder-restart { background: none; border: 0; color: var(--secondary); text-decoration: underline; cursor: pointer; font-family: var(--font-body); font-size: 0.95rem; margin-top: 1.5rem; padding: 0; }
   </style>
+  <noscript><style>@media(max-width:900px){.home-menu{display:flex!important;position:static!important;flex-direction:column}.nav-toggle{display:none!important}}</style></noscript>
 </head>
 <body>
 
@@ -182,7 +183,7 @@
             <label class="ladder-opt"><input type="radio" name="q5" value="I know what I want but can't build the system to do it."><span>I know what I want but can't build the system to do it.</span></label>
           </fieldset>
 
-          <p class="ladder-error" id="ladder-error">Please answer questions 1 through 4 so we can place you.</p>
+          <p class="ladder-error" id="ladder-error" role="alert">Please answer questions 1 through 4 so we can place you.</p>
 
           <button type="submit" class="btn btn-primary">See my result</button>
         </form>
@@ -191,7 +192,7 @@
         <div class="ladder-result" id="ladder-result" aria-live="polite" tabindex="-1">
           <div class="ladder-result-card">
             <span class="ladder-badge" id="ladder-badge">Your result</span>
-            <h3 id="ladder-title">&nbsp;</h3>
+            <h2 id="ladder-title">&nbsp;</h2>
             <p id="ladder-body">&nbsp;</p>
             <div class="ladder-bottleneck">
               <p id="ladder-bottleneck">&nbsp;</p>
@@ -202,7 +203,7 @@
 
           <!-- v2: email capture -->
           <div class="ladder-capture">
-            <h4>Want your result and a short next-step plan in your inbox?</h4>
+            <h3>Want your result and a short next-step plan in your inbox?</h3>
             <p>I'll send a plain-English breakdown of your step and the two or three moves that matter most for where you are. No spam, no drip sequence.</p>
             <form id="ladder-capture-form">
               <div class="ladder-capture-row">
@@ -330,7 +331,7 @@
 
       if (missing) {
         errorEl.classList.add('is-visible');
-        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        errorEl.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
         return;
       }
       errorEl.classList.remove('is-visible');
@@ -365,7 +366,7 @@
 
       resultEl.classList.add('is-visible');
       resultEl.focus();
-      resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      resultEl.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     });
 
     // --- Email capture (v2) ---
@@ -412,7 +413,7 @@
       resultEl.classList.remove('is-visible');
       captureMsg.textContent = '';
       captureMsg.className = 'ladder-capture-msg';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     });
   </script>
 </body>
