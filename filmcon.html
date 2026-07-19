@@ -2,10 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH4JJG7QRY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH4JJG7QRY');
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1505523111107753');
+    fbq('track','PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1505523111107753&amp;ev=PageView&amp;noscript=1" alt=""></noscript>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Storytelling Still Wins — The Field Kit | Amplify AI</title>
   <meta name="description" content="Free field kit from the FilmCon San Diego workshop: five tools for using AI without losing your voice, judgment, or authorship.">
   <link rel="canonical" href="https://amplifyai.to/filmcon">
+  <meta property="og:title" content="Storytelling Still Wins — The Field Kit">
+  <meta property="og:description" content="Free field kit from the FilmCon San Diego workshop: five tools for using AI without losing your voice, judgment, or authorship.">
+  <meta property="og:image" content="https://amplifyai.to/images/og-image.jpg">
+  <meta property="og:url" content="https://amplifyai.to/filmcon">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Storytelling Still Wins — The Field Kit">
+  <meta name="twitter:description" content="Free field kit from the FilmCon San Diego workshop: five tools for using AI without losing your voice, judgment, or authorship.">
+  <meta name="twitter:image" content="https://amplifyai.to/images/og-image.jpg">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,12 +55,12 @@
     .btn:active { background: #C13425; }
     .small { font-size: 13px; color: #5a544a; margin-bottom: 36px; }
     .contact { border-top: 1px solid #d8cfba; padding-top: 24px; font-size: 16px; }
-    .contact a { color: #C13425; font-weight: 600; text-decoration: none; }
+    .contact a { color: #C13425; font-weight: 600; text-decoration: underline; }
     .foot { position: fixed; left: 0; right: 0; bottom: 0; height: 8px; background: #C13425; }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <main class="wrap">
     <div class="eyebrow">FilmCon San Diego · July 17, 2026</div>
     <h1>STORYTELLING<br><span class="red">STILL WINS</span>.</h1>
     <div class="kit">The Field Kit</div>
@@ -41,14 +73,14 @@
       <li>The Application Card</li>
       <li>The Lived · Earned · Chosen Inventory</li>
     </ol>
-    <a class="btn" href="/downloads/storytelling-still-wins-field-kit.pdf">Download the Field Kit (PDF, 7 pages)</a>
+    <a class="btn" href="/downloads/storytelling-still-wins-field-kit.pdf" download onclick="if(typeof gtag==='function')gtag('event','file_download',{file_name:'storytelling-still-wins-field-kit'});if(typeof fbq==='function')fbq('track','Lead',{content_name:'FilmCon Field Kit'});">Download the Field Kit (PDF, 7 pages)</a>
     <div class="small">Free. No sign-up. Share it with your crew.</div>
     <div class="contact">
       <p>Questions, or want to work through the frameworks on your own project? I do hands-on workshops and one-on-one sessions.</p>
-      <p><a href="mailto:alex@alexguillenmusic.com">alex@alexguillenmusic.com</a> · <a href="/">amplifyai.to</a></p>
+      <p><a href="mailto:alex@amplifyai.to">alex@amplifyai.to</a> · <a href="/">amplifyai.to</a></p>
       <p style="margin-top:14px; font-size:14px;">— Alex Guillen, Amplify AI</p>
     </div>
-  </div>
+  </main>
   <div class="foot"></div>
 </body>
 </html>
