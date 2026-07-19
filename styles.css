@@ -115,98 +115,6 @@ section {
   padding: var(--section-gap) 0;
 }
 
-/* --- Nav --- */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(245, 240, 235, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--surface);
-  padding: 1rem 0;
-}
-
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: var(--content-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.nav-brand {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--text);
-  text-decoration: none;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: var(--secondary);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-social {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.nav-social a {
-  color: var(--secondary);
-  display: flex;
-  align-items: center;
-  transition: color 0.2s;
-}
-
-.nav-social a:hover {
-  color: var(--accent);
-}
-
-.nav-social svg {
-  display: block;
-}
-
-/* Mobile nav */
-@media (max-width: 767px) {
-  .nav-inner {
-    flex-wrap: wrap;
-    gap: 0.65rem;
-  }
-
-  .nav-links {
-    order: 3;
-    width: 100%;
-    justify-content: space-between;
-    gap: 0.35rem;
-  }
-
-  .nav-links a {
-    font-size: 0.72rem;
-  }
-
-  .nav-social {
-    display: none;
-  }
-}
-
 /* --- Hero --- */
 .hero {
   padding: clamp(3rem, 8vw, 6rem) 0 var(--section-gap);
@@ -1342,9 +1250,6 @@ section {
 .program-page *, .program-page *::before, .program-page *::after { box-sizing: border-box; }
 .program-page h1, .program-page h2, .program-page h3 { color: inherit; }
 .program-page p { max-width: none; }
-.page-nav-links { display: flex; align-items: center; gap: 1.5rem; }
-.page-nav-links a { color: var(--home-muted); font-size: .8rem; font-weight: 700; }
-.page-nav-links a:hover { color: var(--home-red); }
 
 .program-hero { padding: clamp(5rem,11vw,10rem) 0; }
 .program-hero-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(320px,.65fr); gap: clamp(3rem,9vw,9rem); align-items: end; }
