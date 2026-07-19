@@ -29,7 +29,7 @@
   <title>Where Are You on the AI Adoption Ladder? | Amplify AI</title>
 
   <!-- SEO -->
-  <meta name="description" content="A free 2-minute check for small business owners and creative professionals. Find out where you are on the AI adoption ladder and the one thing standing between you and the next step.">
+  <meta name="description" content="A free 2-minute check for owners and creative pros: find out where you sit on the AI adoption ladder and the one thing holding you back.">
   <link rel="canonical" href="https://amplifyai.to/ladder.html">
 
   <!-- Open Graph -->
@@ -44,6 +44,18 @@
   <meta name="twitter:title" content="Where Are You on the AI Adoption Ladder?">
   <meta name="twitter:description" content="A free 2-minute check for small business owners and creative professionals.">
   <meta name="twitter:image" content="https://amplifyai.to/images/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Where Are You on the AI Adoption Ladder?",
+    "description": "A free 2-minute self-assessment that places you on the AI adoption ladder and names your next step.",
+    "url": "https://amplifyai.to/ladder.html",
+    "publisher": { "@type": "Organization", "name": "Amplify AI", "url": "https://amplifyai.to" }
+  }
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -274,8 +286,7 @@
     }
 
     // --- Quiz logic ---
-    // v2 lead capture: paste your Formspree form ID here (formspree.io -> New form).
-    // Until you do, the email box tells the visitor it isn't wired up instead of failing silently.
+    // Lead capture posts to Formspree (AJAX).
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mrenqaqg';
 
     const RESULTS = {
