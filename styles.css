@@ -666,8 +666,33 @@ section {
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-.blog-card .post-meta {
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 0.75rem;
+}
+
+.blog-card .post-meta {
+  margin: 0;
+}
+
+.post-category {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-height: 1.75rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid rgba(36, 28, 25, 0.18);
+  border-radius: 999px;
+  color: var(--home-ink);
+  background: var(--home-lime);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .blog-card h2 {
