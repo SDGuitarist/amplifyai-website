@@ -703,7 +703,7 @@ section {
   color: var(--accent-hover);
 }
 
-.blog-card.featured {
+.blog-grid > .blog-card:first-child {
   border-left: 3px solid var(--accent);
 }
 
