@@ -1,0 +1,19 @@
+# GitHub Pages / Jekyll configuration for amplifyai.to
+#
+# Purpose: keep internal planning + source files OUT of the public built site.
+# These paths were being served at amplifyai.to (e.g. /docs/..., /HANDOFF.md);
+# excluding them here stops that.
+#
+# IMPORTANT: this only affects what is SERVED on the website. The GitHub repo
+# itself is PUBLIC, so these files remain visible at
+# github.com/SDGuitarist/amplifyai-website. To make them fully private, remove
+# them from the repo or make the repository private.
+
+exclude:
+  - docs
+  - content
+  - screenshots
+  - HANDOFF.md
+  - TODO.md
+  - README.md
+  - compound-engineering.local.md
