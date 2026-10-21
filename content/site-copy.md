@@ -26,7 +26,7 @@ I help creative businesses and small teams use AI the way I use it. A collaborat
 
 Tuesday afternoon. A lead comes in from a venue you played last year. You start drafting a response, get pulled into rehearsal, come back two hours later. The moment's gone. Not because you didn't know what to say. Because you couldn't be in two places at once.
 
-That was my life for years. 2,500 gigs. A Berklee degree. Thirty years of reading rooms and building relationships. And still losing opportunities because the business side ate all the hours that belonged to the creative side.
+That was my life for years. 3,000+ performances. A BA from Berklee Online. Thirty years of reading rooms and building relationships. And still losing opportunities because the business side ate all the hours that belonged to the creative side.
 
 So I started building. Not theory. Real systems. Five apps that handle my leads, prep my gigs, track venue intel, and talk to each other. I'm not an engineer. I'm a working musician who got tired of the gap between what I know and what I could actually act on in a day.
 
@@ -78,9 +78,9 @@ A hands-on workshop for creatives and small business owners. Use AI to work deep
 
 ### Credentials
 
-- 2,500+ live events
+- 3,000+ live performances
 - 30 years in the music and hospitality industry
-- Berklee College of Music
+- BA, Berklee Online
 - 5 AI applications built and running Pacific Flow Entertainment
 - Founder, Pacific Flow Entertainment, San Diego
 
