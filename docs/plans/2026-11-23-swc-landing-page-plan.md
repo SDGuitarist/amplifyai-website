@@ -7,7 +7,7 @@ registration and an email sign-up so new people become reachable.
 ## 1. What changes
 - New page `swc.html` (amplifyai.to/swc.html), built from the `nov20.html` template (same nav, footer, styles).
 - Register button links to `https://registration.xendirect.com/swccd/courseDisplay.cfm?schID=1901`.
-- Email sign-up: plain HTML POST to the existing, tested Formspree form `xpqodrkv`, hidden field `source=swc-landing`.
+- Updates sign-up: NO go-between (Alex, 2026-11-23, after Formspree was proposed). A `mailto:alex@amplifyai.to` button with a prefilled subject, and an `sms:` link to 619-755-3246. Formspree rejected.
 - GA4 `G-FH4JJG7QRY` and Meta Pixel `1505523111107753` (same IDs as index.html); events on register click and sign-up.
 - `sitemap.xml` gets the new URL.
 
@@ -21,8 +21,9 @@ registration and an email sign-up so new people become reachable.
   without JavaScript. Verify: Playwright WebKit, JS disabled, screenshot shows both.
 - WHEN a visitor taps Register THE SYSTEM SHALL open the SWC listing for schID=1901. Verify: link href check +
   fetch of the target returns the "Practical AI for Everyday Work" listing (Alex's browser if the fetcher is blocked).
-- WHEN a visitor submits name and email THE SYSTEM SHALL post them to Formspree `xpqodrkv` with `source=swc-landing`.
-  Verify: one real test submission by Alex (or with his yes), seen in his inbox.
+- WHEN a visitor taps "Email me to get updates" THE SYSTEM SHALL open their email app addressed to alex@amplifyai.to
+  with the subject prefilled. Verify: href check + Alex taps it once on his iPhone and sends a test to himself.
+- WHEN a visitor taps "Or text" THE SYSTEM SHALL open a text to 619-755-3246. Verify: href check + iPhone tap.
 - WHEN the page loads THE SYSTEM SHALL fire GA4 page_view and Meta PageView. Verify: network requests in a browser.
 - THE SYSTEM SHALL contain no em dashes and pass `voice-mechanical.py` on the page text.
 
@@ -47,3 +48,9 @@ registration and an email sign-up so new people become reachable.
 - **Rejected alternatives:** a new page on SWC's site (not ours to edit); a Square or Jotform step (middleman
   failures in 2026); JavaScript-only form (Safari blank-page history).
 - **Least confident:** whether Formspree's free tier limit is high enough once ads run.
+- **Alex's heads-up (2026-11-23):** Formspree is a go-between like FormSubmit and Jotform, which failed silently
+  for weeks in 2026; last recorded test March 30. Gates: (1) test submission from Alex's iPhone in Safari arrives
+  in his inbox BEFORE any ad money; (2) repeat that test weekly while ads run; (3) Formspree only collects, so the
+  48-hour follow-up and monthly newsletter need a sending tool (decision owed before the first free session).
+
+- **Decision 2026-11-23 (Alex): "I'm uncomfortable using a go between. This killed us last time."** Formspree removed; sign-up is a direct email or text to Alex. Trade-off accepted: more friction per sign-up, zero silent-failure path. A newsletter tool (where the list itself lives) is a separate decision before the first free session.
